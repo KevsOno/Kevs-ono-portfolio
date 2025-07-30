@@ -31,22 +31,37 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://kevs-ono-portfolio.netlify.app/#oghenekevbe",
     "name": "Oghenekevbe Michael Onoriode",
     "jobTitle": "Technical Digital Marketing Expert, Web Analytics & SEO Specialist for SMBs",
+    "image": "https://kevs-ono-portfolio.netlify.app/images/logo.png", // Image URL included
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lagos",
       "addressCountry": "Nigeria"
     },
     "url": "https://kevs-ono-portfolio.netlify.app",
-    "sameAs": ["https://www.linkedin.com/in/kevs-ono-63996652"]
+    "sameAs": ["https://www.linkedin.com/in/kevs-ono-63996652"],
+    "mainEntityOfPage": { // Linking Person to the specific About section
+      "@id": "https://kevs-ono-portfolio.netlify.app/#about"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://kevs-ono-portfolio.netlify.app/#portfolioPage",
     "name": "Oghenekevbe Michael Onoriode: Portfolio for SMBs & Digital Marketing Recruiters",
     "url": "https://kevs-ono-portfolio.netlify.app",
-    "description": "Explore the portfolio of Oghenekevbe Michael Onoriode, a Lagos-based Technical Digital Marketing Expert. Specializing in driving measurable online growth and optimizing digital presence for Small to Medium Businesses (SMBs). Ideal for recruiters seeking data-driven marketing and web talent."
+    "description": "Explore the portfolio of Oghenekevbe Michael Onoriode, a Lagos-based Technical Digital Marketing Expert. Specializing in driving measurable online growth and optimizing digital presence for Small to Medium Businesses (SMBs). Ideal for recruiters seeking data-driven marketing and web talent.",
+    "mainEntity": { // Linking WebPage to the Person
+      "@id": "https://kevs-ono-portfolio.netlify.app/#oghenekevbe"
+    },
+    "hasPart": { // Defining the About Me section as a WebPageElement
+      "@type": "WebPageElement",
+      "name": "About Me Section",
+      "@id": "https://kevs-ono-portfolio.netlify.app/#about", // Matching HTML anchor
+      "cssSelector": "#about"
+    }
   },
   {
     "@context": "https://schema.org",
@@ -86,7 +101,6 @@
 ]
 </script>
 
-</script>
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
