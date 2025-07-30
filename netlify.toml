@@ -1,4 +1,14 @@
-# netlify.toml (This file is located at the root of your Muzoscent-funnel repository)
+# netlify.toml (This file is located at the root of your Kevs-ono-portfolio repository)
 [build]
-  publish = "." # This means "publish from the current working directory" which is already 'muzoscents-funnel old'
-  functions = "netlify/functions" # This means "functions are in 'netlify/functions' relative to the current working directory"
+  # This is the directory where your main website files (index.html, CSS, JS, images) are.
+  # Since they are in the 'portfolio' subfolder, we set publish to "portfolio".
+  publish = "portfolio"
+
+  # This is the command Netlify runs to build your site.
+  # For a simple static HTML/CSS/JS site, you might not need one, so it can be empty.
+  command = "" # Keep this empty if you don't have a build script
+
+[functions]
+  # This tells Netlify where to find your serverless functions.
+  # It should point to the 'netlify/functions' folder relative to the root.
+  directory = "netlify/functions"
