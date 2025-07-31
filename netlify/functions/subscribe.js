@@ -17,16 +17,17 @@ exports.handler = async function (event, context) {
     };
   }
 
-  // *** ADD THIS DEBUGGING LINE HERE ***
   const brevoApiKey = process.env.BREVO_API_KEY;
-  console.log("DEBUG: Brevo API Key status:", brevoApiKey ? "******** (key detected)" : "undefined/missing");
-  // **********************************
+  const listId = Number(process.env.BREVO_LIST_ID);
 
-  // Add a check for the key's presence before proceeding with the API call
-  if (!brevoApiKey) {
+  // Log key presence (not value)
+  console.log("DEBUG: Brevo API Key present?", !!brevoApiKey);
+  console.log("DEBUG: List ID:", listId);
+
+  if (!brevoApiKey || !listId) {
     return {
-        statusCode: 500,
-        body: JSON.stringify({ message: "Server configuration error: Brevo API key is missing from environment variables." })
+      statusCode: 500,
+      body: JSON.stringify({ message: "Server configuration error: Missing Brevo API key or List ID." }),
     };
   }
 
@@ -35,27 +36,29 @@ exports.handler = async function (event, context) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'api-key': brevoApiKey, // Use the variable here
+        'api-key': brevoApiKey,
       },
       body: JSON.stringify({
         email: email,
         attributes: { FIRSTNAME: name },
-        listIds: [Number(process.env.BREVO_LIST_ID)], // This conversion is correct
+        listIds: [listId],
         updateEnabled: true,
       }),
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
-      const error = await response.json();
       return {
         statusCode: response.status,
-        body: JSON.stringify({ message: error.message || 'Brevo API error' }),
+        body: JSON.stringify({ message: result.message || 'Brevo API error' }),
       };
     }
 
+    // Always return a friendly message regardless of new or existing contact
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Subscribed successfully' }),
+      body: JSON.stringify({ message: '🎉 Thanks! You’re on the list (or already subscribed).' }),
     };
   } catch (err) {
     return {
