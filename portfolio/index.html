@@ -280,6 +280,17 @@
       color: #333;
       padding: 0.5rem 0;
     }
+  
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 <body class="antialiased bg-stone-100 text-gray-800">
@@ -327,24 +338,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
      <section id="hero" class="text-center py-16 px-4 sm:px-6 lg:px-8" style="background-color: #f8f8f8;">
-     
+  
   <img src="images/hero_logo.png" alt="KD Logo"
-       style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;">
-  <p style="font-size: 1.3rem; color: #2c3e50; font-weight: 500; margin-bottom: 10px;">
-  I don’t stack tools. I stack wins.
-</p>
+       style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;"
+       class="scroll-fade-up">
 
-<p class="text-xl font-bold text-orange-700 mb-8">
-  Michael Onoriode
-</p>
+  <p class="scroll-fade-up" style="font-size: 1.3rem; color: #2c3e50; font-weight: 500; margin-bottom: 10px;">
+    I don’t stack tools. I stack wins.
+  </p>
 
-<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
-  Oghenekevbe Michael Onoriode: <br>
-  Technical Digital Marketing & Analytics Expert
-</h1>
-      <p class="text-xl md:text-2xl text-gray-700 mb-8">As a <strong >Technical Digital Marketing Expert</strong>, I specialize in building <strong>user-friendly websites</strong>, creating connecting content, implementing full-funnel tracking,<strong> advanced web analytics</strong>, and email marketing automation for <strong >measurable business growth</strong>.</p>
-      <a href="#portfolio" class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90">Explore My Work</a>
-    </section>
+  <p class="text-xl font-bold text-orange-700 mb-8 scroll-fade-up">
+    Michael Onoriode
+  </p>
+
+  <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 scroll-fade-up">
+    Oghenekevbe Michael Onoriode: <br>
+    Technical Digital Marketing & Analytics Expert
+  </h1>
+
+  <p class="text-xl md:text-2xl text-gray-700 mb-8 scroll-fade-up">
+    As a <strong>Technical Digital Marketing Expert</strong>, I specialize in building
+    <strong>user-friendly websites</strong>, creating connecting content, implementing full-funnel tracking,
+    <strong>advanced web analytics</strong>, and email marketing automation for
+    <strong>measurable business growth</strong>.
+  </p>
+
+  <a href="#portfolio"
+     class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up"
+     style="transition-delay: 1s;">Explore My Work</a>
+
+</section>
 
     
    
@@ -620,6 +643,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button class="back-to-top" id="back-to-top" aria-label="Back to top" tabindex="0">↑ Top</button>
 
   <script>
+   
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // triggers only once
+      }
+    });
+  });
+
+  document.querySelectorAll('.scroll-fade-up').forEach(el => {
+    observer.observe(el);
+  });
+
       
           const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
