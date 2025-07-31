@@ -20,7 +20,6 @@ exports.handler = async function (event, context) {
   const brevoApiKey = process.env.BREVO_API_KEY;
   const listId = Number(process.env.BREVO_LIST_ID);
 
-  // Log key presence (not value)
   console.log("DEBUG: Brevo API Key present?", !!brevoApiKey);
   console.log("DEBUG: List ID:", listId);
 
@@ -46,7 +45,12 @@ exports.handler = async function (event, context) {
       }),
     });
 
-    const result = await response.json();
+    let result = {};
+    try {
+      result = await response.json(); // Try to parse, but safely
+    } catch (e) {
+      console.log("No JSON returned (likely 204 No Content)");
+    }
 
     if (!response.ok) {
       return {
@@ -55,15 +59,15 @@ exports.handler = async function (event, context) {
       };
     }
 
-    // Always return a friendly message regardless of new or existing contact
     return {
       statusCode: 200,
       body: JSON.stringify({ message: '🎉 Thanks! You’re on the list (or already subscribed).' }),
     };
   } catch (err) {
+    console.error("BREVO ERROR:", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Server error', error: err.message }),
+      body: JSON.stringify({ message: 'Server error', error: err.message || 'Unknown error' }),
     };
   }
 };
