@@ -1,14 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
- 
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PKS7PPJK');
-  </script>
  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -106,7 +98,7 @@
 ]
 </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./dist/output.css" rel="stylesheet">
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -297,6 +289,13 @@
   
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKS7PPJK"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PKS7PPJK');
+  </script>
 
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
@@ -647,6 +646,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top" tabindex="0">↑ Top</button>
+
+  <script>
+   
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // triggers only once
+      }
+    });
+  });
+
+  document.querySelectorAll('.scroll-fade-up').forEach(el => {
+    observer.observe(el);
+  });
+
+      
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Add event listener to toggle the 'open' class on the mobile menu
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close the mobile menu when a link inside it is clicked (optional, but good for UX)
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+      
+    const popup = document.getElementById('popup');
+    const leadForm = document.getElementById('leadForm');
+    const message = document.getElementById('message');
+    const backToTop = document="back-to-top" aria-label="Back to top" tabindex="0">↑ Top</button>
 
   <script>
    
