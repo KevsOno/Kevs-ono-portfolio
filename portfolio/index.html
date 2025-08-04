@@ -579,28 +579,28 @@
             <div aria-label="PageSpeed audit charts" class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-5xl mx-auto px-4 min-w-[320px] w-full" id="auditCharts" role="region">
                 <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
                     <canvas aria-label="Performance Score Chart" class="block w-full h-full" height="96" id="performanceChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
                         <span id="performanceValue">0%</span>
                         <div>Performance</div>
                     </div>
                 </div>
                 <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
                     <canvas aria-label="Accessibility Score Chart" class="block w-full h-full" height="96" id="accessibilityChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
                         <span id="accessibilityValue">0%</span>
                         <div>Accessibility</div>
                     </div>
                 </div>
                 <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
                     <canvas aria-label="Best Practices Score Chart" class="block w-full h-full" height="96" id="bestChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
                         <span id="bestValue">0%</span>
                         <div>Best Practices</div>
                     </div>
                 </div>
                 <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
                     <canvas aria-label="SEO Score Chart" class="block w-full h-full" height="96" id="seoChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
                         <span id="seoValue">0%</span>
                         <div>SEO</div>
                     </div>
@@ -812,95 +812,6 @@
           }, { threshold: 0.2 });
           chartObserver.observe(auditCharts);
         }
-    </script>
-    <section class="bg-white rounded-lg shadow-lg py-12" id="audit">
-        <h2 class="text-center text-2xl font-bold mb-8">PageSpeed Audit Scores</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto px-4" id="auditCharts">
-            <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto">
-                <canvas class="block" height="96" id="performanceChart" loading="lazy" width="96"></canvas>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
-                    <span id="performanceValue">0%</span><div>Performance</div>
-                </div>
-            </div>
-            <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto">
-                <canvas class="block" height="96" id="accessibilityChart" loading="lazy" width="96"></canvas>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
-                    <span id="accessibilityValue">0%</span><div>Accessibility</div>
-                </div>
-            </div>
-            <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto">
-                <canvas class="block" height="96" id="bestChart" loading="lazy" width="96"></canvas>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
-                    <span id="bestValue">0%</span><div>Best Practices</div>
-                </div>
-            </div>
-            <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto">
-                <canvas class="block" height="96" id="seoChart" loading="lazy" width="96"></canvas>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm">
-                    <span id="seoValue">0%</span><div>SEO</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const auditCharts = document.getElementById('auditCharts');
-        if (auditCharts && typeof Chart !== 'undefined') {
-          const createChart = (canvasId, labelId, targetValue, color, labelText) => {
-            const canvas = document.getElementById(canvasId);
-            const label = document.getElementById(labelId);
-            if (!canvas || !label) return;
-            canvas.setAttribute('role', 'img');
-            canvas.setAttribute('aria-label', `${labelText} score is ${targetValue}%`);
-            const ctx = canvas.getContext('2d');
-            const chart = new Chart(ctx, {
-              type: 'doughnut',
-              data: {
-                datasets: [{
-                  data: [0, 100],
-                  backgroundColor: [color, '#e5e7eb'],
-                  borderWidth: 0
-                }]
-              },
-              options: {
-                cutout: '75%',
-                animation: {
-                  duration: 1500,
-                  easing: 'easeOutCubic',
-                  onProgress: function (animation) {
-                    const value = Math.min(Math.round((animation.currentStep / animation.numSteps) * targetValue), targetValue);
-                    label.textContent = `${value}%`;
-                  },
-                  onComplete: function () {
-                    label.textContent = `${targetValue}%`;
-                  }
-                },
-                plugins: {
-                  tooltip: { enabled: false },
-                  legend: { display: false }
-                }
-              }
-            });
-            setTimeout(() => {
-              chart.data.datasets[0].data = [targetValue, 100 - targetValue];
-              chart.update();
-            }, 100);
-          };
-          const chartObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                createChart('performanceChart', 'performanceValue', 85, '#22c55e', 'Performance');
-                createChart('accessibilityChart', 'accessibilityValue', 93, '#3b82f6', 'Accessibility');
-                createChart('bestChart', 'bestValue', 96, '#f97316', 'Best Practices');
-                createChart('seoChart', 'seoValue', 100, '#9333ea', 'SEO');
-                observer.disconnect();
-              }
-            });
-          }, { threshold: 0.2 });
-          chartObserver.observe(auditCharts);
-        }
-      });
     </script>
 </body>
 </html>
