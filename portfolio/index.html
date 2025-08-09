@@ -318,6 +318,15 @@
           #auditCharts {
             grid-template-columns: repeat(4, minmax(0, 1fr));
           }
+            #contact .button {
+        animation: pulse 2s infinite ease-in-out;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    #contact .button:hover {
+        transform: scale(1.05);
+              }
+            
         }
     </style>
 </head>
@@ -371,6 +380,12 @@
                 <strong>measurable business growth</strong>.
             </p>
             <a class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up" href="#portfolio" style="transition-delay: 1s;">Explore My Work</a>
+            <section id="contact" aria-labelledby="contact-title" role="region">
+    
+    
+    <div style="text-align: center;">
+      <a href="mailto:mickevsono@gmail.com" class="button">Start a Project</a>
+    </div>
         </section>
         <section class="py-12" id="about">
             <h2 class="section-title">About Me</h2>
@@ -878,6 +893,7 @@
     </script>
 </body>
 </html>
+
 
 
 
