@@ -299,7 +299,29 @@
           font-weight: 500;
           color: #333;
           padding: 0.5rem 0;
-        }/* scroll reveal (keep as-is) */
+
+            /* Pulse animation — only for Start a Project */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Start a Project CTA */
+.hero-cta-animate {
+  animation: pulse 2s infinite ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+.hero-cta-animate:hover {
+  transform: scale(1.05);
+}
+
+/* Prefer-reduced-motion safety */
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta-animate { animation: none; transition: none; }
+}
+
+/* Scroll fade-up — for Explore My Work */
 .scroll-fade-up {
   opacity: 0;
   transform: translateY(20px);
@@ -310,42 +332,9 @@
   transform: translateY(0);
 }
 
-/* Ensure audit grid layout works */
-#auditCharts {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-/* Desktop columns for audit charts */
-@media (min-width: 768px) {
-  #auditCharts {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-/* Contact button animation (move out of the media query if you want it at all sizes) */
-#contact .button {
-  animation: pulse 2s infinite ease-in-out;
-  transition: transform 0.2s ease-in-out;
-}
-#contact .button:hover {
-  transform: scale(1.05);
-}
-
-/* Pulse keyframes (needed for any element using 'pulse') */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
-/* Hero CTA — ONLY this element pulses (no transform conflict) */
-.hero-cta-animate {
-  animation: pulse 2s infinite ease-in-out;
-  transition: transform 0.2s ease-in-out;
-}
-.hero-cta-animate:hover {
-  transform: scale(1.05);
+/* Add delay just to Explore My Work button */
+.explore-delay {
+  transition-delay: 1s;
 }
     </style>
 </head>
@@ -399,16 +388,15 @@
                 <strong>measurable business growth</strong>.
             </p>
             <!-- other hero items keep scroll-fade-up -->
-<a class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up" 
-   href="#portfolio" style="transition-delay: 1s;">Explore My Work</a>
+<a class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up explore-delay" href="#portfolio">
+  Explore My Work
+</a>
 
-<!-- CTA wrapped for scroll reveal and CTA scale separate -->
-<div class="scroll-fade-up" style="transition-delay: 1.2s;">
-  <a href="mailto:mickevsono@gmail.com"
-     class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 hero-cta-animate"
-     aria-label="Email Kevs to start a project">
-    Work With Me
-  </a>
+<a href="mailto:mickevsono@gmail.com" 
+   class="bg-green-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 hero-cta-animate scroll-fade-up" 
+   style="margin-top: 20px;">
+   Start a Project
+</a>
 </div>
             </section>     
         <section class="py-12" id="about">
@@ -917,6 +905,7 @@
     </script>
 </body>
 </html>
+
 
 
 
