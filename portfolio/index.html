@@ -635,38 +635,41 @@
             </div>
         </section>
         <section class="py-12 bg-white rounded-lg shadow-lg" id="audit">
-            <h2 class="section-title text-center text-2xl font-bold mb-8">PageSpeed Audit Scores</h2>
-            <div aria-label="PageSpeed audit charts" class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-5xl mx-auto px-4 min-w-[320px] w-full" id="auditCharts" role="region">
-                <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
-                    <canvas aria-label="Performance Score Chart" class="block w-full h-full" height="96" id="performanceChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
-                        <span id="performanceValue">0%</span>
-                        <div>Performance</div>
-                    </div>
-                </div>
-                <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
-                    <canvas aria-label="Accessibility Score Chart" class="block w-full h-full" height="96" id="accessibilityChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
-                        <span id="accessibilityValue">0%</span>
-                        <div>Accessibility</div>
-                    </div>
-                </div>
-                <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
-                    <canvas aria-label="Best Practices Score Chart" class="block w-full h-full" height="96" id="bestChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
-                        <span id="bestValue">0%</span>
-                        <div>Best Practices</div>
-                    </div>
-                </div>
-                <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
-                    <canvas aria-label="SEO Score Chart" class="block w-full h-full" height="96" id="seoChart" width="96"></canvas>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
-                        <span id="seoValue">0%</span>
-                        <div>SEO</div>
-                    </div>
-                </div>
+    <h2 class="section-title text-center text-2xl font-bold mb-2">PageSpeed Audit Scores</h2>
+    <p class="text-center text-sm text-gray-500 mb-8">
+        Typical audit scores from recent builds (your results may vary)
+    </p>
+    <div aria-label="PageSpeed audit charts" class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-5xl mx-auto px-4 min-w-[320px] w-full" id="auditCharts" role="region">
+        <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
+            <canvas aria-label="Performance Score Chart" class="block w-full h-full" height="96" id="performanceChart" width="96"></canvas>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
+                <span id="performanceValue">0%</span>
+                <div>Performance</div>
             </div>
-        </section>
+        </div>
+        <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
+            <canvas aria-label="Accessibility Score Chart" class="block w-full h-full" height="96" id="accessibilityChart" width="96"></canvas>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
+                <span id="accessibilityValue">0%</span>
+                <div>Accessibility</div>
+            </div>
+        </div>
+        <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
+            <canvas aria-label="Best Practices Score Chart" class="block w-full h-full" height="96" id="bestChart" width="96"></canvas>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
+                <span id="bestValue">0%</span>
+                <div>Best Practices</div>
+            </div>
+        </div>
+        <div class="relative w-full max-w-[120px] h-20 sm:h-24 md:h-28 mx-auto aspect-square">
+            <canvas aria-label="SEO Score Chart" class="block w-full h-full" height="96" id="seoChart" width="96"></canvas>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-xs font-bold sm:text-sm text-center">
+                <span id="seoValue">0%</span>
+                <div>SEO</div>
+            </div>
+        </div>
+    </div>
+</section>
         <section class="py-12" id="certifications">
             <h2 class="section-title">Certifications &amp; Education</h2>
             <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
@@ -875,6 +878,7 @@
     </script>
 </body>
 </html>
+
 
 
 
