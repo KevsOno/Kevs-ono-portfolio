@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
     };
   }
 
-  const { name, email, website, painPoint, notes } = JSON.parse(event.body);
+  const { name, email, website, painPoint, notes, fingerprint } = JSON.parse(event.body);
 
   if (!email || !name) {
     return {
@@ -19,16 +19,39 @@ exports.handler = async function (event, context) {
 
   const brevoApiKey = process.env.BREVO_API_KEY;
   const brevoListId = process.env.BREVO_LIST_ID;
+  const sheetDbUrl = process.env.GOOGLE_SHEETS_DB_URL; // New environment variable
 
-  if (!brevoApiKey || !brevoListId) {
+  if (!brevoApiKey || !brevoListId || !sheetDbUrl) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Server configuration error: Brevo API key or list ID is missing." })
+      body: JSON.stringify({ message: "Server configuration error: Brevo API key, list ID, or Google Sheets DB URL is missing." })
     };
   }
 
   try {
-    const response = await fetch('https://api.brevo.com/v3/contacts', {
+    // Step 1: Check Google Sheet for duplicate email or fingerprint
+    const checkResponse = await fetch(`${sheetDbUrl}?email=${encodeURIComponent(email)}&fingerprint=${encodeURIComponent(fingerprint)}`);
+    const checkData = await checkResponse.json();
+
+    if (!checkResponse.ok) {
+      console.error('Google Sheets check API error:', checkData);
+      return {
+        statusCode: checkResponse.status,
+        body: JSON.stringify({ message: 'An error occurred during verification.' }),
+      };
+    }
+
+    if (checkData.exists) {
+        return {
+            statusCode: 409,
+            body: JSON.stringify({ message: '❌ You’ve already requested a free audit with this email or from this device.' }),
+        };
+    }
+
+    // Step 2: If no duplicates, add new data to both Brevo and the Google Sheet
+    
+    // Add to Brevo
+    const brevoResponse = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,26 +63,37 @@ exports.handler = async function (event, context) {
           FIRSTNAME: name,
           WEBSITE: website,
           PAINPOINT: painPoint,
-          NOTES: notes
+          NOTES: notes,
+          FINGERPRINT: fingerprint
         },
         listIds: [Number(brevoListId)],
         updateEnabled: true,
       }),
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      console.error('Brevo API Error:', error);
-      return {
-        statusCode: response.status,
-        body: JSON.stringify({ message: error.message || 'Brevo API error' }),
-      };
+    // Add to Google Sheet
+    const sheetAddResponse = await fetch(sheetDbUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, website, painPoint, notes, fingerprint, date: new Date().toISOString() })
+    });
+
+    if (!brevoResponse.ok || !sheetAddResponse.ok) {
+        // Log errors but return success if at least one service worked.
+        // You'll want to review your logs to see if one of these failed.
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ message: '🎉 Thanks! You’re on the list, but there may have been a minor issue with one of our services.' }),
+        };
     }
 
     return {
       statusCode: 200,
       body: JSON.stringify({ message: '🎉 Thanks! You’re on the list (or already subscribed).' }),
     };
+
   } catch (err) {
     console.error('Server error:', err);
     return {
