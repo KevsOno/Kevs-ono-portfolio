@@ -1,14 +1,13 @@
-# netlify.toml (This file is located at the root of your Kevs-ono-portfolio repository)
 [build]
-  # This is the directory where your main website files (index.html, CSS, JS, images) are.
-  # Since they are in the 'portfolio' subfolder, we set publish to "portfolio".
-  publish = "portfolio"
-
   # This is the command Netlify runs to build your site.
-  # For a simple static HTML/CSS/JS site, you might not need one, so it can be empty.
-  command = "npm run build" # Keep this empty if you don't have a build script
+  command = "npm run build"
+
+  # This is the directory where your main website files are.
+  publish = "portfolio"
 
 [functions]
   # This tells Netlify where to find your serverless functions.
-  # It should point to the 'netlify/functions' folder relative to the root.
   directory = "netlify/functions"
+
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
