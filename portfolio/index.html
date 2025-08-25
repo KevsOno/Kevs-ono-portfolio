@@ -1058,6 +1058,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               body: JSON.stringify({ name, email })
             });
             if (response.ok) {
+
+              // Add the GTM dataLayer push here
+
+              window.dataLayer = window.dataLayer || [];
+
+              window.dataLayer.push({
+
+                'event': 'form_submit_complete'
+
+              });
+
+    // GTM layer end
+                
               message.textContent = '🎉 Subscribed successfully!';
               message.className = 'success';
               leadForm.reset();
