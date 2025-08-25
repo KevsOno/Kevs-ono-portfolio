@@ -1057,25 +1057,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ name, email })
             });
-            if (response.ok) {
-
+            
+              if (response.ok) {
               // Add the GTM dataLayer push here
-
               window.dataLayer = window.dataLayer || [];
-
               window.dataLayer.push({
-
                 'event': 'form_submit_complete'
-
               });
-
     // GTM layer end
                 
               message.textContent = '🎉 Subscribed successfully!';
               message.className = 'success';
               leadForm.reset();
-              hidePopup();
-            } else {
+              
+              // The popup will now hide after 3 seconds
+              setTimeout(() => {
+                  hidePopup();
+              }, 3000); 
+        }
+              
+              else {
               const errorData = await response.json();
               message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
               message.className = 'error';
