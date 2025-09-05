@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
    
-   
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8DCC2W8');</script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>From Code to Conversions: Technical Marketer | Michael Onoriode</title>
@@ -91,226 +97,225 @@
           ]
     </script>
     
+    <link href="dist/output.css" rel="stylesheet"/>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconnect to speed up font requests -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-    <link rel="preload" href="dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-
-    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
-
-
-
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"></noscript>
-
-    
-
-     <style>
-    :root{
-      /* New Dark UI Colors */
-      --bg:#0b0f14;
-      --card:#121821;
-      --muted:#99a3b3;
-      --fg:#e8eef7;
-      --accent:#6ee7b7;
-      --accent2:#60a5fa;
-      --border:#1f2a37;
-      --chip:#0f1722;
-
-      /* Keep the original colors for compatibility but they won't be used */
-      --light-bg: #f9fafb;
-      --dark-text: #333;
-      --heading-text: #1a202c;
-      --light-border: #e2e8f0;
-      --white-card: #ffffff;
-    }
+<!-- Load fonts with swap to avoid render-blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--fg);
+        font-family: 'Inter', sans-serif;
+        background-color: #f9fafb;
+        color: #333;
     }
+
     .section-title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: var(--heading-text); /* Updated color */
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--border); /* Updated color */
-      padding-bottom: 0.5rem;
-      text-align: center;
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+        text-align: center;
     }
+
     .card {
-      background-color: var(--card); /* Updated color */
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Updated shadow for dark mode */
-      transition: transform 0.3s ease-in-out;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--border); /* Added border */
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease-in-out;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
+
     .card:hover {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
+
     .skill-tag {
-      border-radius: 9999px;
-      padding: 0.375rem 0.75rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      white-space: nowrap;
+        border-radius: 9999px;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        white-space: nowrap;
     }
+
     .skill-tag-orange {
-      background-color: #fef3c7;
-      color: #b45309;
+        background-color: #fef3c7;
+        color: #b45309;
     }
+
     .skill-tag-emerald {
-      background-color: #d1fae5;
-      color: #065f46;
+        background-color: #d1fae5;
+        color: #065f46;
     }
+
     .skill-tag-blue {
-      background-color: #dbeafe;
-      color: #1e40af;
+        background-color: #dbeafe;
+        color: #1e40af;
     }
+
     .skill-tag-gray {
-      background-color: #e5e7eb;
-      color: #374151;
+        background-color: #e5e7eb;
+        color: #374151;
     }
+
     .popup {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--card); /* Updated color */
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35); /* Updated shadow */
-      z-index: 9999;
-      max-width: 300px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      border: 1px solid var(--border);
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        max-width: 300px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
     }
+
     .popup.visible {
-      display: block;
-      opacity: 1;
+        display: block;
+        opacity: 1;
     }
+
     .popup-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
     }
+
     .popup-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--fg); /* Updated color */
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #2c3e50;
     }
+
     .close-wrapper {
-      float: right;
+        float: right;
     }
+
     .close-btn {
-      background-color: #e74c3c;
-      color: white;
-      border: none;
-      font-size: 0.9rem;
-      padding: 6px;
-      cursor: pointer;
-      border-radius: 6px;
-      width: 28px;
-      height: 28px;
-      text-align: center;
-      line-height: 1;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        font-size: 0.9rem;
+        padding: 6px;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        line-height: 1;
     }
+
     .portfolio-img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
     }
+
     form input,
     form button {
-      width: 100%;
-      margin: 8px 0;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid var(--border); /* Updated color */
-      border-radius: 5px;
-      background-color: var(--chip); /* New color for input fields */
-      color: var(--fg);
+        width: 100%;
+        margin: 8px 0;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
+
     form button {
-      background-color: var(--accent2); /* Updated color */
-      color: white;
-      border: none;
-      cursor: pointer;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
     }
+
     .success {
-      color: var(--accent); /* Updated color */
-      font-size: 0.9rem;
+        color: green;
+        font-size: 0.9rem;
     }
+
     .error {
-      color: #e74c3c; /* Kept red for error messages */
-      font-size: 0.9rem;
+        color: red;
+        font-size: 0.9rem;
     }
+
     .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--accent2); /* Updated color */
-      color: var(--bg);
-      padding: 10px 15px;
-      border-radius: 50%;
-      font-size: 1rem;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #3498db;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 1rem;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
     }
+
     .back-to-top.visible {
-      display: block;
+        display: block;
     }
+
     .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: var(--card); /* Updated color */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Updated shadow */
-      z-index: 40;
-      flex-direction: column;
-      padding: 1rem 0;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+        flex-direction: column;
+        padding: 1rem 0;
     }
+
     .mobile-menu.open {
-      display: flex;
+        display: flex;
     }
+
     .mobile-menu li {
-      width: 100%;
-      text-align: center;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border); /* Updated color */
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f0f0f0;
     }
+
     .mobile-menu li:last-child {
-      border-bottom: none;
+        border-bottom: none;
     }
+
     .mobile-menu a {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--fg); /* Updated color */
-      padding: 0.5rem 0;
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+        padding: 0.5rem 0;
+    }
+
+    /* Pulse animation — only for Start a Project */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
     }
 
     /* Collapsible Styles */
     .collapsible-container {
-        border: 1px solid var(--border);
+        border: 1px solid ;
         border-radius: 12px;
         padding: 10px 12px;
-        background: var(--card);
         margin: 10px 0;
         transition: transform 0.3s ease;
     }
@@ -318,7 +323,7 @@
     .collapsible-container:hover {
         transform: translateY(-5px);
     }
-    
+
     .collapsible-summary {
         padding: 2rem;
         font-size: 1.5rem;
@@ -326,64 +331,57 @@
         cursor: pointer;
         outline: none;
         display: block;
-        color: var(--accent);
     }
-    
+
     .collapsible-summary::-webkit-details-marker {
         display: none;
     }
-    
+
     .collapsible-summary::after {
-        content: '\25b6';
+        content: ' Click To Expand ';
         float: right;
         font-size: 1.5rem;
         transition: transform 0.5s ease;
     }
-    
+
     .collapsible-container[open] .collapsible-summary::after {
-        content: '\25bc';
-        transform: rotate(900deg);
+        content: ' Click To Fold ';
     }
-    
+
     .collapsible-content {
         padding: 0 2rem 2rem;
     }
 
-    /* Pulse animation — only for Start a Project */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-
     /* Start a Project CTA */
     .hero-cta-animate {
-      animation: pulse 2s infinite ease-in-out;
-      transition: transform 0.2s ease-in-out;
+        animation: pulse 2s infinite ease-in-out;
+        transition: transform 0.2s ease-in-out;
     }
+
     .hero-cta-animate:hover {
-      transform: scale(1.05);
+        transform: scale(1.05);
     }
 
     /* Prefer-reduced-motion safety */
     @media (prefers-reduced-motion: reduce) {
-      .hero-cta-animate { animation: none; transition: none; }
+        .hero-cta-animate { animation: none; transition: none; }
     }
 
     /* Scroll fade-up — for Explore My Work */
     .scroll-fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
     }
+
     .scroll-fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
 
     /* Add delay just to Explore My Work button */
     .explore-delay {
-      transition-delay: 1s;
+        transition-delay: 1s;
     }
 </style>
 </head>
@@ -392,8 +390,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
             <a href="index.html">
-               
-                <img alt="KD Logo" src="images/header_logo.webp" style="max-width: 160px; height: auto;">
+                <img alt="KD Logo" src="images/header_logo.webp" style="max-width: 160px; height: auto;"/>
             </a>
             <button aria-label="Open main menu" class="lg:hidden p-2 rounded-md text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" id="mobile-menu-button">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -420,7 +417,7 @@
     </header>
     <main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
         <section class="text-center py-16 px-4 sm:px-6 lg:px-8" id="hero" style="background-color: #f8f8f8;">
-    <img alt="KD Logo" class="scroll-fade-up" src="images/hero_logo.webp" style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;" fetchpriority="high"/>
+    <img alt="KD Logo" class="scroll-fade-up" src="images/hero_logo.webp" style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;"/>
     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 scroll-fade-up" style="font-size: 2.5rem;">
         The Digital Marketing Strategist Who Thinks Like a Computer Scientist
     </h1>
@@ -569,9 +566,9 @@
             <div class="max-w-3xl mx-auto space-y-8">
                 <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">Founder &amp; Digital Marketing Specialist | Business Strategy Analyst | Data-Driven Growth Analyst</h3>
-                    <p class="text-md text-white text-justify mb-2">Kevs Digital | Jan 2023 - Present</p>
-                    <p class="text-md text-white text-justify mb-4 leading-relaxed">Applied innovative thinking, problem-solving skills, and technical expertise to build and grow <strong>brands online presence</strong> through comprehensive digital marketing strategies.</p>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <p class="text-md text-gray-600 text-justify mb-2">Kevs Digital | Jan 2023 - Present</p>
+                    <p class="text-md text-gray-700 text-justify mb-4 leading-relaxed">Applied innovative thinking, problem-solving skills, and technical expertise to build and grow <strong>brands online presence</strong> through comprehensive digital marketing strategies.</p>
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Provide comprehensive digital marketing services including<strong > website design, SEO, social media management, email marketing automation, and analytics setup.
 </strong>.</li>
                         <li>Designed a <strong>responsive WordPress blog</strong> and shop using HTML and CSS, enhancing SEO and <strong>user experience</strong>.</li>
@@ -582,13 +579,13 @@
                      <li>Built and deployed lead capture forms and<strong> email campaigns in Brevo & HubSpot,</strong> integrating contacts directly into the CRM for nurturing.</li>
                        <li>Collaborate directly with clients to align <strong >marketing initiatives</strong> with <strong>business goals</strong> and <strong>brand identity</strong>.</li>
                         <li>Stay updated with the<strong> latest digital marketing trends</strong> and technologies to continuously enhance <strong>service offerings</strong> </ul>
-                    <p class="text-sm text-white mt-4"><a class="text-orange-700 hover:underline" href="/services.html">See my Kevs Digital Services</a>.</p>
+                    <p class="text-sm text-gray-600 mt-4"><a class="text-orange-700 hover:underline" href="/services.html">See my Kevs Digital Services</a>.</p>
                 </div>
                     <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">Co-creator &amp; Digital Marketing Specialist | Business Strategy Analyst | Data-Driven Growth Analyst</h3>
-                    <p class="text-md text-white text-justify  mb-2">CedarScentHub / MuzoScents | Jan 2024 - Present</p>
-                    <p class="text-md text-white text-justify mb-4 leading-relaxed">Applied innovative thinking and technical expertise to build and grow an <strong>e-commerce brand</strong> through comprehensive digital marketing strategies.</p>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <p class="text-md text-gray-600 text-justify  mb-2">CedarScentHub / MuzoScents | Jan 2024 - Present</p>
+                    <p class="text-md text-gray-700 text-justify mb-4 leading-relaxed">Applied innovative thinking and technical expertise to build and grow an <strong>e-commerce brand</strong> through comprehensive digital marketing strategies.</p>
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Launched CedarScentHub and rebranded to MuzoScents with an upgraded identity, focusing on <strong>brand strategy</strong>.</li>
                         <li>Designed a <strong>responsive WordPress blog</strong> and shop using HTML and CSS, enhancing SEO and <strong>user experience</strong>.</li>
                         <li>Created <strong>SEO-optimized blog posts</strong> focused on mood-based perfume usage, leveraging analytical thinking to target <strong>high-intent keywords</strong>.</li>
@@ -597,15 +594,15 @@
                         <li>Monitored <strong>organic search performance</strong> using Google Search Console.</li>
                         <li>Used innovative thinking to overcome free platform limitations by implementing a manual WhatsApp payment channel, ensuring <strong>sales continuity</strong> and <strong>direct customer service</strong>.</li>
                     </ul>
-                    <p class="text-sm text-white text-justify mt-4"><a class="text-orange-700 hover:underline" href="/services.html#seo-content">See my SEO services</a>.</p>
-                    <p class="text-sm text-white text-justify mt-4">Tools Used: Google Search Console (GSC), Jetpack, Canva, Capcut, WordPress, HTML, CSS, Keywords Research, Brevo (Sendinblue), Hashtags Research.</p>
+                    <p class="text-sm text-gray-600 text-justify mt-4"><a class="text-orange-700 hover:underline" href="/services.html#seo-content">See my SEO services</a>.</p>
+                    <p class="text-sm text-gray-600 text-justify mt-4">Tools Used: Google Search Console (GSC), Jetpack, Canva, Capcut, WordPress, HTML, CSS, Keywords Research, Brevo (Sendinblue), Hashtags Research.</p>
                 </div>
                 <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">MuzoFunnels: Advanced Web Analytics &amp; Engagement for Lead Generation (Portfolio Project)</h3>
-                    <p class="text-md text-white mb-2">Project Dates: July 23rd, 2025 – Present</p>
-                    <p class="text-md text-white text-justify mb-4 leading-relaxed">Leveraged strategic problem-solving and logical reasoning from my computer science background to design a robust <strong>web analytics and email marketing system</strong> for a multi-page <strong>sales funnel</strong> on Netlify.</p>
+                    <p class="text-md text-gray-600 mb-2">Project Dates: July 23rd, 2025 – Present</p>
+                    <p class="text-md text-gray-700 text-justify mb-4 leading-relaxed">Leveraged strategic problem-solving and logical reasoning from my computer science background to design a robust <strong>web analytics and email marketing system</strong> for a multi-page <strong>sales funnel</strong> on Netlify.</p>
                     <h4 class="text-lg font-bold text-emerald-700">What I Did &amp; Why It Matters:</h4>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Architected <strong>GA4 and GTM setups</strong> using HTML and JavaScript, achieving <strong>98% data fidelity</strong> through <strong>logical reasoning</strong>.</li>
                         <li>Implemented granular <strong>custom event tracking</strong> via GTM to uncover critical user behaviors for <strong>conversion rate optimization</strong>.</li>
                         <li>Applied <strong>strategic problem-solving</strong> to code a JavaScript-based email capture pop-up triggered at a strategic scroll depth, significantly increasing <strong>lead acquisition</strong> opportunities.</li>
@@ -613,25 +610,25 @@
                         <li>Used <strong>analytical thinking</strong> to diagnose and resolve data discrepancies, reducing reporting errors by 95% and ensuring<strong>data accuracy</strong>.</li>
                         <li>Built interactive <strong>dashboards in Google Looker Studio</strong>, consolidating GA4 data for<strong>real-time insights</strong>, driving <strong>data-driven optimizations</strong>.</li>
                     </ul>
-                    <p class="text-sm text-green mt-4"><a class="text-orange-700 hover:underline" href="/services.html#analytics">Explore analytics services</a>.</p>
-                    <p class="text-sm text-white mt-4">Tools Used: Google Analytics 4 (GA4), Google Tag Manager (GTM), Google Looker Studio, Netlify, HTML, CSS, JavaScript, Brevo (Sendinblue).</p>
+                    <p class="text-sm text-gray-600 mt-4"><a class="text-orange-700 hover:underline" href="/services.html#analytics">Explore analytics services</a>.</p>
+                    <p class="text-sm text-gray-600 mt-4">Tools Used: Google Analytics 4 (GA4), Google Tag Manager (GTM), Google Looker Studio, Netlify, HTML, CSS, JavaScript, Brevo (Sendinblue).</p>
                 </div>
                 <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">Freelance Software Developer</h3>
-                    <p class="text-md text-white mb-2">Various Clients | 2016 - 2023</p>
-                    <p class="text-md text-white text-justify mb-4 leading-relaxed">Developed standalone and web-based applications as a freelancer, honing <strong>strategic problem-solving</strong> and <strong>analytical skills</strong> that enhance my <strong>digital marketing</strong> work, such as analytics setup in MuzoFunnels.</p>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <p class="text-md text-gray-600 mb-2">Various Clients | 2016 - 2023</p>
+                    <p class="text-md text-gray-700 text-justify mb-4 leading-relaxed">Developed standalone and web-based applications as a freelancer, honing <strong>strategic problem-solving</strong> and <strong>analytical skills</strong> that enhance my <strong>digital marketing</strong> work, such as analytics setup in MuzoFunnels.</p>
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Built a Java-based birth registration system for hospitals in 2017, streamlining record management with a web interface using HTML, CSS, and PHP</li>
                         <li>Developed a Java-based hotel management system in 2019, handling bookings, reservations, customer/staff data, and inventory, demonstrating <strong>complex system design</strong>.</li>
                         <li>Utilized Java, NetBeans, HTML, and CSS to create user-friendly interfaces and efficient systems, applying logical reasoning to meet <strong>client needs effectively</strong>.</li>
                     </ul>
-                    <p class="text-sm text-green mt-4"><a class="text-orange-700 hover:underline" href="/services.html#web-design">See web design services</a>.</p>
-                    <p class="text-sm text-white mt-4">Tools Used: Java, NetBeans IDE, HTML, CSS, PHP.</p>
+                    <p class="text-sm text-gray-600 mt-4"><a class="text-orange-700 hover:underline" href="/services.html#web-design">See web design services</a>.</p>
+                    <p class="text-sm text-gray-600 mt-4">Tools Used: Java, NetBeans IDE, HTML, CSS, PHP.</p>
                 </div>
                 <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">ICT Teacher</h3>
-                    <p class="text-md text-white mb-2">Graceland Academy, Magboro | Feb 2024 - Apr 2025</p>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <p class="text-md text-gray-600 mb-2">Graceland Academy, Magboro | Feb 2024 - Apr 2025</p>
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Taught computing basics, Microsoft Office, and digital literacy.</li>
                         <li>Prepared students for CBT-style exams and internet research.</li>
                         <li>Maintained classroom, tech systems, and resolved technical issues.</li>
@@ -639,8 +636,8 @@
                 </div>
                 <div class="card">
                     <h3 class="text-xl font-bold text-orange-700">Administrative Assistant</h3>
-                    <p class="text-md text-white mb-2">Setraco Nigeria Ltd | May 2012 - Jun 2013</p>
-                    <ul class="list-disc pl-5 space-y-1 text-justify text-white">
+                    <p class="text-md text-gray-600 mb-2">Setraco Nigeria Ltd | May 2012 - Jun 2013</p>
+                    <ul class="list-disc pl-5 space-y-1 text-justify text-gray-700">
                         <li>Handled data entry, staff records, reports, and administrative logistics.</li>
                     </ul>
                 </div>
@@ -650,35 +647,30 @@
 <section class="py-12 bg-white rounded-lg shadow-lg" id="portfolio">
     <h2 class="section-title">Portfolio Case Studies</h2>
     <div class="max-w-4xl mx-auto text-justify space-y-12">
-        
-
-
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="prose max-w-none p-6 md:p-8 lg:p-10"><details class="collapsible-container"> 
 
 
 <summary class="collapsible-summary"> 
-
-
     <h3 class="text-xl font-bold mb-6 text-orange-700"> Case Study: Strategic Organic Traffic & Growth for a New E-commerce Brand</h3></summary>
-    <p class="leading-relaxed text-white">
-        <strong class="text-orange-700">The Challenge:</strong>
+    <p class="leading-relaxed">
+        <strong>The Challenge:</strong>
         The online fragrance market was saturated and highly competitive. The business was a new entrant with a zero-dollar budget for launch, limited brand awareness, and no clear <strong>Product-Market Fit (PMF)</strong> for the broader, price-sensitive market.
     </p>
-    <p class="text-white leading-relaxed">
+    <p class="leading-relaxed">
         <strong>The Lean Startup Solution (Phase 1):</strong>
         I architected a lean digital ecosystem using free tools. I built a functional e-commerce shop on a free WordPress.com platform and established a presence on all major social media platforms (Facebook, Instagram, TikTok, Pinterest, blogs). I implemented a custom workaround to enable customer checkout via WhatsApp, bypassing the platform's limitations without plugins.
     </p>
-    <p class="text-white leading-relaxed">
+    <p class="leading-relaxed">
         <strong>The Strategic Rebrand (Phase 2):</strong>
         To achieve brand uniqueness, I conducted a deep dive using <strong>Customer Journey Mapping (CJM)</strong> and <strong>Jobs to be Done (JTBD)</strong>. This analysis revealed that a growing segment was not just buying perfume; they were seeking a "personalized scent to express their identity." I used this insight to rebrand, creating content and articles that resonated with this specific customer need.
     </p>
-    <p class="text-white leading-relaxed">
+    <p class="leading-relaxed">
         <strong>The Data-Driven Scale (Phase 3):</strong>
         I formally applied strategic frameworks to validate our new direction. A <strong>Blue Ocean Strategy</strong> was used to move the brand into an uncontested niche, while a <strong>TAM-SAM-SOM</strong> analysis projected a potential increase in annual revenue from <strong>₦3M–₦6M</strong> to <strong>₦15M–₦30M</strong>. A <strong>SWOT analysis</strong> was conducted to identify core weaknesses and build a roadmap for long-term growth.
     </p>
     <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-    <ul class="list-disc pl-5 space-y-1 text-white text-justify leading-relaxed">
+    <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
         <li>
             The strategy successfully positioned the brand in a unique market space, leading to a <strong>46.7% organic traffic growth</strong> in two months.
         </li>
@@ -689,7 +681,7 @@
 <li>Landed a high-value client, generating profit 27× the average deal size. This boosted overall profit significantly while keeping CAC lower than previous levels and improving the precision of marketing copy and targeting.</li>
         
     </ul>
-    <div class="text-sm mt-4 text-white">
+    <div class="text-sm mt-4 text-gray-500">
         <span class="font-bold">
             Skills & Tools used:
         </span>
@@ -716,38 +708,36 @@
         </a>
     </p>
 </div><div class="p-6 md:p-8 lg:p-10">
-                <div class="flex flex-col text-white space-y-6">
+                <div class="flex flex-col space-y-6">
                     <div>
                         <img alt="MuzoScents collage of SEO-optimized WordPress blog post and web traffic sessions, achieving 46.7% traffic growth" class="portfolio-img" loading="lazy" src="images/blog-traffic.webp"/>
-                        <p class="text-center text-sm text-white">Collage showcasing MuzoScents’ <strong>SEO blog post</strong> and <strong>traffic sessions</strong>.</p>
+                        <p class="text-center text-sm text-gray-600">Collage showcasing MuzoScents’ <strong>SEO blog post</strong> and <strong>traffic sessions</strong>.</p>
                     </div>
                     <div>
                         <img alt="MuzoScents branding and social media collage featuring TikTok, Instagram, and Facebook posts for enhanced brand visibility" class="portfolio-img" loading="lazy" src="images/branding-smm.webp"/>
-                        <p class="text-center text-sm text-white"><strong>Branding</strong> and <strong>social media marketing</strong> collage for MuzoScents, featuring posts across TikTok, Instagram, and Facebook for <strong>enhanced brand visibility</strong>.</p>
+                        <p class="text-center text-sm text-gray-600"><strong>Branding</strong> and <strong>social media marketing</strong> collage for MuzoScents, featuring posts across TikTok, Instagram, and Facebook for <strong>enhanced brand visibility</strong>.</p>
                     </div>
                 </div>
             </div>
             
         </div>
-        </details>
-       </div>
+       </details></div>
         
         <div class="grid md:grid-cols-2 gap-8 items-center">
     <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-      <details class="collapsible-container"> 
+        <details class="collapsible-container"> 
 
 
-
-<summary class="collapsible-summary">   <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Architecting a Data-Driven Lead Generation System</h3></summary>
-        <p class="leading-relaxed text-white">
-            <strong class="text-orange-700">The Challenge:</strong> The client needed a robust lead generation system to acquire new clients and scale, but was operating in a highly competitive market. They lacked a dedicated sales team, and their current capacity was a bottleneck to growth.
+<summary class="collapsible-summary"> <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Architecting a Data-Driven Lead Generation System</h3></summary>
+        <p class="leading-relaxed">
+            <strong>The Challenge:</strong> The client needed a robust lead generation system to acquire new clients and scale, but was operating in a highly competitive market. They lacked a dedicated sales team, and their current capacity was a bottleneck to growth.
         </p>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Strategic Solution:</strong>
             I leveraged my hybrid computer science and digital marketing expertise to develop a new <strong>Value Proposition Canvas (VPC)</strong> for the brand: "affordable, customized, tech-integrated digital solutions." I used a <strong>TAM-SAM-SOM</strong> analysis to define the market opportunity and developed a clear action plan to grow the company's serviceable addressable market (SAM) from ₦45M to ₦90M-₦120M. This strategic alignment ensured we had a strong <strong>Product-Market Fit (PMF)</strong> for our target audience.
         </p>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Key Actions</h4>
-        <ul class="list-disc text-justify pl-5 space-y-1 text-white mb-4 leading-relaxed">
+        <ul class="list-disc text-justify pl-5 space-y-1 mb-4 leading-relaxed">
             <li>
                 Performed a deep audit that aligned with the <strong>Customer Journey Map (CJM)</strong> to identify key pain points and opportunities for automation.
             </li>
@@ -764,15 +754,15 @@
                 Built a multi-page sales funnel with robust web analytics and email marketing automation systems.
             </li>
         </ul>
-        <div class="text-sm text-white">
+        <div class="text-sm text-gray-500">
             <span class="font-bold">
                 Skills & Tools used:
             </span>
             Google Analytics 4 (GA4), Google Tag Manager (GTM), Google Looker Studio, HTML, CSS, JavaScript, HubSpot, Mailchimp, CJM, VPC, TAM-SAM-SOM, PMF, NPS, Lead Generation.
         </div>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-        <p class="leading-relaxed text-white">The system increased lead acquisition through targeted email campaigns and achieved <strong>a higher trial-to-purchase intent</strong> for segmented audiences, demonstrating effective <strong>marketing automation</strong> and <strong>analytics implementation</strong>.</p>
-        <p class="leading-relaxed text-white">The strategic roadmap and recommendations are projected to increase the business's potential revenue from ₦4.5M–₦6M to ₦9M–₦12M annually. This foundation will also enable the business to collect valuable customer data, which can be used to improve customer satisfaction and increase their <strong>Net Promoter Score (NPS)</strong>.</p>
+        <p class="leading-relaxed">The system increased lead acquisition through targeted email campaigns and achieved <strong>a higher trial-to-purchase intent</strong> for segmented audiences, demonstrating effective <strong>marketing automation</strong> and <strong>analytics implementation</strong>.</p>
+        <p class="leading-relaxed">The strategic roadmap and recommendations are projected to increase the business's potential revenue from ₦4.5M–₦6M to ₦9M–₦12M annually. This foundation will also enable the business to collect valuable customer data, which can be used to improve customer satisfaction and increase their <strong>Net Promoter Score (NPS)</strong>.</p>
         <p class="text-center mt-4">
             <a
                 href="https://mzfunnel.netlify.app/"
@@ -798,37 +788,34 @@
         <div class="flex flex-col space-y-6">
             <div>
                 <img alt="MuzoFunnels analytics collage featuring Looker Studio dashboards, GTM setup, and GA4 tracking, achieving 98% data fidelity" class="portfolio-img" loading="lazy" src="images/analytics-tracking.webp"/>
-                <p class="text-center text-sm text-white">Analytics collage for MuzoFunnels, showcasing <strong>Looker Studio</strong>, <strong>GTM</strong>, and <strong>GA4</strong> for 98% data fidelity.</p>
+                <p class="text-center text-sm text-gray-600">Analytics collage for MuzoFunnels, showcasing <strong>Looker Studio</strong>, <strong>GTM</strong>, and <strong>GA4</strong> for 98% data fidelity.</p>
             </div>
             <div>
                 <img alt="MuzoFunnels collage of 3-step Brevo email automation workflow and two email copies, driving 15% lead increase" class="portfolio-img" loading="lazy" src="images/email-automation.webp"/>
-                <p class="text-center text-sm text-white">Collage of MuzoFunnels’ 3-step <strong>email automation</strong> and replica email copies, contributing to <strong>15% lead growth</strong>.</p>
+                <p class="text-center text-sm text-gray-600">Collage of MuzoFunnels’ 3-step <strong>email automation</strong> and replica email copies, contributing to <strong>15% lead growth</strong>.</p>
             </div>
         </div>
     </div>
-   
 </div>
 </details>
-</div>
-        
+        </div>
 
 <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
     <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-      <details class="collapsible-container"> 
+       <details class="collapsible-container"> 
 
 
-
-<summary class="collapsible-summary">   <h3 class="text-xl font-bold text-orange-700">Case Study: Applying Strategic Frameworks, Analytics and Coding Skills, to Building Kevs Digital Agency</h3></summary>
-        <p class="leading-relaxed text-white">
-            <strong class="text-orange-700">The Challenge:</strong>
+<summary class="collapsible-summary">  <h3 class="text-xl font-bold text-orange-700">Case Study: Applying Strategic Frameworks, Analytics and Coding Skills, to Building Kevs Digital Agency</h3></summary>
+        <p class="leading-relaxed">
+            <strong>The Challenge:</strong>
             As a new digital services agency, Kevs Digital faced the challenge of establishing credibility and a scalable business model in a highly competitive market. A <strong>SWOT Analysis</strong> revealed key weaknesses like <strong>zero brand awareness</strong> and <strong>no prior portfolio</strong>, alongside external threats from <strong>intense competition</strong> and <strong>economic instability</strong> impacting SME budgets. These factors made it crucial to differentiate and build trust from the ground up.
         </p>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Strategic Solution:</strong>
             I applied core strategic frameworks to my own business. A <strong>VRIO Analysis</strong> helped identify and build a competitive advantage, leveraging my <strong>unique blend of Computer Science and digital marketing expertise</strong>. Using a <strong>Blue Ocean Strategy</strong>, I focused on creating a new market space for affordable, tech-integrated solutions for SMEs, avoiding direct competition. A <strong>Value Chain Analysis</strong> and <strong>TAM-SAM-SOM</strong> framework were used to optimize operations and set a clear, data-driven roadmap for growth.
         </p>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Key Actions</h4>
-        <ul class="list-disc pl-5 space-y-1 text-white leading-relaxed">
+        <ul class="list-disc pl-5 space-y-1 leading-relaxed">
             <li>
                 Developed a master list of <strong>Standard Operating Procedures (SOPs)</strong> to standardize project delivery and ensure high-quality, repeatable results for every client, addressing internal capacity risks.
             </li>
@@ -843,16 +830,16 @@
             </li>
         </ul>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             The strategic foundational work provided a clear roadmap for growth. By applying a data-driven approach to my own business, the agency is projected to increase its Serviceable Addressable Market (SAM) from ₦45M to over ₦90M annually. The business now has a strong, defensible position that can scale, with projections for a <strong>15–25% increase in annual revenue</strong> and an improvement in client retention from <strong>60% to 80%</strong>.
         </p>
-        <div class="text-sm mt-4 text-white">
+        <div class="text-sm mt-4 text-gray-500">
             <span class="font-bold">
                 Skills & Tools used:
             </span>
             SWOT Analysis, PESTLE Analysis, Porter's Five Forces, VRIO Analysis, Blue Ocean Strategy, TAM-SAM-SOM, Value Chain Analysis, SOP Development, Digital Strategy, HTML, Tailwind CSS, JavaScript, GA4, GTM, Looker Studio.
         </div>
-        <p class="text-center text-white mt-4">
+        <p class="text-center mt-4">
             <a
                 href="#portfolio"
                 aria-label="View this project (the portfolio website)"
@@ -880,7 +867,7 @@
     class="portfolio-img" 
     loading="lazy"
   />
-  <figcaption class="text-center text-sm text-white">
+  <figcaption class="text-center text-sm text-gray-600">
     <strong>Looker Studio:</strong> This dashboard highlights my ability to design clear, 
     <strong>insight-driven reports that transform complex data into actionable business intelligence</strong>. 
     I use the same reporting frameworks for clients to track performance, simplify decision-making, 
@@ -895,7 +882,7 @@
     class="portfolio-img" 
     loading="lazy"
   />
-  <figcaption class="text-center text-sm text-white">
+  <figcaption class="text-center text-sm text-gray-600">
     <strong>Google Analytics 4:</strong> This report demonstrates my ability to translate 
     <strong>audience demographics and behavior into data-backed strategies</strong>. 
     The same analytical approach I apply here is what I use to help clients uncover user insights, 
@@ -910,7 +897,7 @@
     class="portfolio-img" 
     loading="lazy"
   />
-  <figcaption class="text-center text-sm text-white">
+  <figcaption class="text-center text-sm text-gray-600">
     <strong>Google Search Console:</strong> This report showcases my expertise in 
     <strong>tracking clicks, impressions, and keyword performance</strong>. 
     By applying the same proven frameworks for clients, I turn search data into actionable insights 
@@ -921,55 +908,53 @@
             
             <div>
                 <img alt="Kevs Digital SWOT Analysis matrix." class="portfolio-img" loading="lazy" src="images/swot-analysis.webp"/>
-                <p class="text-center text-sm text-white">The <strong>SWOT Analysis</strong> helped identify strengths and weaknesses to build a competitive strategy.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>SWOT Analysis</strong> helped identify strengths and weaknesses to build a competitive strategy.</p>
             </div>
             <div>
                 <img alt="Kevs Digital PESTLE Analysis chart." class="portfolio-img" loading="lazy" src="images/pestle-analysis.webp"/>
-                <p class="text-center text-sm text-white">The <strong>PESTLE Analysis</strong> provides a comprehensive view of external market factors.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>PESTLE Analysis</strong> provides a comprehensive view of external market factors.</p>
             </div>
             <div>
                 <img alt="Kevs Digital Porter's Five Forces diagram." class="portfolio-img" loading="lazy" src="images/porters-five-forces.webp"/>
-                <p class="text-center text-sm text-white">The <strong>Porter's Five Forces</strong> analysis was used to understand industry competition and profitability.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>Porter's Five Forces</strong> analysis was used to understand industry competition and profitability.</p>
             </div>
             <div>
                 <img alt="Kevs Digital VRIO Analysis table." class="portfolio-img" loading="lazy" src="images/vrio-analysis.webp"/>
-                <p class="text-center text-sm text-white">The <strong>VRIO Analysis</strong> helped define a sustainable competitive advantage.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>VRIO Analysis</strong> helped define a sustainable competitive advantage.</p>
             </div>
             <div>
                 <img alt="Kevs Digital Blue Ocean Strategy four actions framework." class="portfolio-img" loading="lazy" src="images/blue-ocean-strategy.webp"/>
-                <p class="text-center text-sm text-white">The <strong>Blue Ocean Strategy</strong> helped position the agency to create a new market space.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>Blue Ocean Strategy</strong> helped position the agency to create a new market space.</p>
             </div>
             <div>
                 <img alt="Kevs Digital TAM-SAM-SOM market sizing table." class="portfolio-img" loading="lazy" src="images/tam-sam-som.webp"/>
-                <p class="text-center text-sm text-white">The <strong>TAM-SAM-SOM</strong> framework was used to set a clear, quantifiable growth target.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>TAM-SAM-SOM</strong> framework was used to set a clear, quantifiable growth target.</p>
             </div>
             <div>
                 <img alt="Kevs Digital Value Chain Analysis diagram." class="portfolio-img" loading="lazy" src="images/value-chain-analysis.webp"/>
-                <p class="text-center text-sm text-white">The <strong>Value Chain Analysis</strong> identified key areas for operational efficiency and revenue optimization.</p>
+                <p class="text-center text-sm text-gray-600">The <strong>Value Chain Analysis</strong> identified key areas for operational efficiency and revenue optimization.</p>
             </div>
         </div>
-    </div>
-    </details>
+    </div></details>
     </div>
 
    <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-   <details class="collapsible-container"> 
+    <details class="collapsible-container"> 
 
 
-
-<summary class="collapsible-summary">  <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Strategic Insight on Ads & Funnel Optimization</h3></summary>
-    <p class="leading-relaxed text-white">
-        <strong class="text-orange-700">The Challenge:</strong>
+<summary class="collapsible-summary"> <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Strategic Insight on Ads & Funnel Optimization</h3></summary>
+    <p class="leading-relaxed">
+        <strong>The Challenge:</strong>
         During an evaluation process with a <strong>highly rated healthcare brand</strong>, I was challenged on the importance of ad experience. 
         Ads were often seen as the “easy win” in digital marketing, but I discovered that poorly structured funnels can turn ad spend into losses, not growth.
     </p>
-    <p class="leading-relaxed text-white">
+    <p class="leading-relaxed">
         <strong>The Discovery:</strong>
         While running Google and Meta Ads campaigns for my own projects, I saw firsthand how quickly costs scale. 
         To understand the dynamics, I pulled funnel reports and realized ads only deliver <strong>ROI</strong> when supported by the right foundation: 
         <strong>fast web performance</strong>, <strong>content matching user intent</strong>, <strong>clear analytics</strong>, and <strong>SEO that attracts qualified leads</strong>.
     </p>
-    <p class="leading-relaxed text-white">
+    <p class="leading-relaxed">
         <strong>The Strategic Insight:</strong>
         Ads are not magic. They are multipliers. 
         If the funnel is strong, ads amplify growth. If the funnel is weak, ads amplify losses. 
@@ -977,7 +962,7 @@
     </p>
 
     <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-    <ul class="list-disc pl-5 space-y-1 text-white text-justify leading-relaxed">
+    <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
         <li>
             Developed a framework where <strong>ads integrate with funnel strategy</strong>, ensuring every click has a measurable impact.
         </li>
@@ -989,46 +974,42 @@
         </li>
     </ul>
 
-    <div class="text-sm mt-4 text-white">
+    <div class="text-sm mt-4 text-gray-500">
         <span class="font-bold">Skills & Tools used:</span>
         Funnel Analysis, Google Ads, Meta Ads, SEO, Analytics, UX Optimization, Conversion Tracking.
     </div>
 </div>
-
 
 <div class="p-6 md:p-8 lg:p-10">
     <div class="flex flex-col space-y-6">
         <div>
             <img alt="Funnel analysis illustration showing user journey from traffic through thank-you page conversion" 
                  class="portfolio-img" loading="lazy" src="images/funnel.webp"/>
-            <p class="text-center text-sm text-white">
+            <p class="text-center text-sm text-gray-600">
                 Funnel visualization showing how <strong>traffic</strong> flows through the journey into <strong>conversions</strong>, 
                 highlighting the role of ads as multipliers.
             </p>
         </div>
     </div>
 </div>
-</details>
-</div>
    
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
        <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <details class="collapsible-container"> 
+       <details class="collapsible-container"> 
 
 
-
-<summary class="collapsible-summary"> <h3 class="text-xl font-bold text-orange-700">Case Study: Brand Identity & E-commerce Strategy for a Branding Company</h3></summary>
-        <p class="leading-relaxed text-white">
+<summary class="collapsible-summary">  <h3 class="text-xl font-bold text-orange-700">Case Study: Brand Identity & E-commerce Strategy for a Branding Company</h3></summary>
+        <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             The branding & Fashion company was struggling to articulate its own value proposition to its ideal client. They needed a strategic rebranding to improve their own business development efforts and attract high-value clients.
         </p>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Strategic Solution:</strong>
             I first used the <strong>Value Proposition Canvas (VPC)</strong> to create a new, customer-centric value proposition. This process helped the brand articulate how it solves client problems and delivers real value. I also used a <strong>SWOT analysis</strong> to identify the brand's core strengths, weaknesses, and opportunities for market growth.
         </p>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-        <ul class="list-disc pl-5 space-y-1 text-white leading-relaxed">
+        <ul class="list-disc pl-5 space-y-1 leading-relaxed">
             <li>
                 Successfully rebranded the company to a more professional, solution-oriented identity, attracting high-value B2B clients.
             </li>
@@ -1036,7 +1017,7 @@
                 Helped the outfit grow their audience to <strong>2,000+ followers</strong> and achieve an <strong>increase in online sales</strong> through strategic content and a new brand identity.
             </li>
         </ul>
-        <div class="text-sm mt-4 text-white">
+        <div class="text-sm mt-4 text-gray-500">
             <span class="font-bold">
                 Skills & Tools used:
             </span>
@@ -1045,12 +1026,11 @@
     </div>
     <div class="p-6 md:p-8 lg:p-10">
         <div class="flex flex-col space-y-6">
-            <p class="text-center text-sm text-white>Confidential project; no visuals available due to NDA.</p>
+            
         </div>
     </div>
 </div>
-</div>
-</details>
+</div></details>
 </div>
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
@@ -1058,18 +1038,17 @@
        <details class="collapsible-container"> 
 
 
-
 <summary class="collapsible-summary">  <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy Roadmap for a Premium Fashion Outfit</h3></summary>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             The premium fashion outfit needed to address digital inefficiencies, including a confusing user experience and disconnected online channels. The business lacked a unified digital strategy, resulting in lost sales and audience confusion.
         </p>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Strategic Solution:</strong>
             I conducted a comprehensive <strong>Value Chain Analysis</strong> to identify where value was lost in their digital ecosystem, from discovery to conversion. This led me to implement a new <strong>Customer Journey Map (CJM)</strong> to identify and fix key pain points. I also performed a <strong>Porter's Five Forces</strong> analysis to understand the competitive landscape and build a more resilient brand strategy.
         </p>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-        <ul class="list-disc pl-5 space-y-1 text-white leading-relaxed">
+        <ul class="list-disc pl-5 space-y-1 leading-relaxed">
             <li>
                 Provided a one-year roadmap with recommendations for UX/UI improvements, website-social media integration, and conversion optimization.
             </li>
@@ -1077,7 +1056,7 @@
                 This strategic plan is projected to increase conversions by streamlining the user experience and integrating all digital channels.
             </li>
         </ul>
-        <div class="text-sm mt-4 text-white">
+        <div class="text-sm mt-4 text-gray-500">
             <span class="font-bold">
                 Skills & Tools used:
             </span>
@@ -1086,30 +1065,29 @@
     </div>
     <div class="p-6 md:p-8 lg:p-10">
         <div class="flex flex-col space-y-6">
-            <p class="text-center text-sm text-white">Confidential project; no visuals available due to NDA.</p>
+            
         </div>
     </div>
+    </details>
 </div>
-</details>
-</div>
+
        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
           <div class="prose max-w-none p-6 md:p-8 lg:p-10">
         <details class="collapsible-container"> 
 
 
-
 <summary class="collapsible-summary"> <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy for a Publishing Media Outfit</h3></summary>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             A traditional publishing house wanted to transition to a modern digital platform. Their primary challenge was increasing online visibility and audience engagement without a clear digital strategy.
         </p>
-        <p class="leading-relaxed text-white">
+        <p class="leading-relaxed">
             <strong>The Strategic Solution:</strong>
             I conducted a <strong>PESTLE analysis</strong> to understand the political, economic, social, technological, legal, and environmental factors affecting their market. This analysis informed a targeted digital strategy that included improving their website's SEO and increasing social media presence.
         </p>
         <h4 class="text-lg font-bold text-orange-700 mt-6">Results</h4>
-        <ul class="list-disc pl-5 space-y-1 text-white leading-relaxed">
+        <ul class="list-disc pl-5 space-y-1 leading-relaxed">
             <li>
                 The digital strategy successfully increased online visibility and audience engagement across their key platforms.
             </li>
@@ -1117,7 +1095,7 @@
                 Implemented a content marketing plan that boosted organic search traffic and positioned the brand as an authority in its niche.
             </li>
         </ul>
-        <div class="text-sm mt-4 text-white">
+        <div class="text-sm mt-4 text-gray-500">
             <span class="font-bold">
                 Skills & Tools used:
             </span>
@@ -1126,19 +1104,18 @@
     </div>
     <div class="p-6 md:p-8 lg:p-10">
         <div class="flex flex-col space-y-6">
-            <p class="text-center text-sm text-white">Confidential project; no visuals available due to NDA.</p>
+            <p class="text-center text-sm text-gray-600">Confidential project; no visuals available due to NDA.</p>
         </div>
     </div>
+    </details>
 </div>
 
 
-</div>
-</details>
 </div>
 </section>
         <section class="py-12 bg-white rounded-lg shadow-lg" id="audit">
     <h2 class="section-title text-center text-2xl font-bold mb-2">PageSpeed Audit Scores</h2>
-    <p class="text-center text-sm text-white mb-8">
+    <p class="text-center text-sm text-gray-500 mb-8">
         Typical audit scores from recent builds (your results may vary)
     </p>
     <div aria-label="PageSpeed audit charts" class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-5xl mx-auto px-4 min-w-[320px] w-full" id="auditCharts" role="region">
@@ -1231,185 +1208,173 @@
             <p aria-live="polite" id="message"></p>
         </form>
     </div>
-    <button aria-label="Back to top" class="back-to-top" id="back-to-top" tabindex="0">↑ Top</button><!-- GTM starts-->
-     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N8DCC2W8');</script>
-    <!-- gtm ends -->
+    <button aria-label="Back to top" class="back-to-top" id="back-to-top" tabindex="0">↑ Top</button>
+   
+   
+    <script defer="" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <script>
         // Mobile Menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton?.addEventListener('click', () => mobileMenu?.classList.toggle('open'));
         mobileMenu?.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+          link.addEventListener('click', () => mobileMenu.classList.remove('open'));
         });
-        
         // Popup & Form
         const popup = document.getElementById('popup');
         const leadForm = document.getElementById('leadForm');
         const message = document.getElementById('message');
         const closeBtn = document.querySelector('.close-btn');
-
         function showPopup() {
-            if (popup && sessionStorage.getItem('popupShown') !== 'true') {
-                popup.classList.add('visible');
-                sessionStorage.setItem('popupShown', 'true');
-            }
+          if (popup && sessionStorage.getItem('popupShown') !== 'true') {
+            popup.classList.add('visible');
+            sessionStorage.setItem('popupShown', 'true');
+          }
         }
-        
         function hidePopup() {
-            popup?.classList.remove('visible');
+          popup?.classList.remove('visible');
         }
-        
         closeBtn?.addEventListener('click', hidePopup);
-        
         leadForm?.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            message.textContent = '';
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          message.textContent = '';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            message.textContent = 'Please enter a valid email address.';
+            message.className = 'error';
+            return;
+          }
+          try {
+            const response = await fetch('/.netlify/functions/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email })
+            });
             
-            if (!emailRegex.test(email)) {
-                message.textContent = 'Please enter a valid email address.';
-                message.className = 'error';
-                return;
-            }
-            
-            try {
-                const response = await fetch('/.netlify/functions/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email })
-                });
+              if (response.ok) {
+              // Add the GTM dataLayer push here
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({
+                'event': 'form_submit_complete'
+              });
+    // GTM layer end
                 
-                if (response.ok) {
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
-                        'event': 'form_submit_complete'
-                    });
-                    
-                    message.textContent = '🎉 Subscribed successfully!';
-                    message.className = 'success';
-                    leadForm.reset();
-                    
-                    setTimeout(() => {
-                        hidePopup();
-                    }, 3000); 
-                } else {
-                    const errorData = await response.json();
-                    message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
-                    message.className = 'error';
-                }
-            } catch (error) {
-                message.textContent = '⚠️ Network error: ' + error.message;
-                message.className = 'error';
-            }
-        });
-        
-        if (sessionStorage.getItem('popupShown') === 'true' && popup) {
-            popup.classList.remove('visible');
+              message.textContent = '🎉 Subscribed successfully!';
+              message.className = 'success';
+              leadForm.reset();
+              
+              // The popup will now hide after 3 seconds
+              setTimeout(() => {
+                  hidePopup();
+              }, 3000); 
         }
-
+              
+              else {
+              const errorData = await response.json();
+              message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
+              message.className = 'error';
+            }
+          } catch (error) {
+            message.textContent = '⚠️ Network error: ' + error.message;
+            message.className = 'error';
+          }
+        });
+        if (sessionStorage.getItem('popupShown') === 'true' && popup) {
+          popup.classList.remove('visible');
+        }
         // Scroll event listener for popup and back-to-top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollDepth = scrollTop / docHeight;
-            
-            if (scrollDepth > 0.5) {
-                showPopup();
-            }
-            if (scrollTop > 300) {
-                backToTop?.classList.add('visible');
-            } else {
-                backToTop?.classList.remove('visible');
-            }
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollDepth = scrollTop / docHeight;
+          if (scrollDepth > 0.5) {
+            showPopup();
+          }
+          if (scrollTop > 300) {
+            backToTop?.classList.add('visible');
+          } else {
+            backToTop?.classList.remove('visible');
+          }
         });
-        
         backToTop?.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
         // Scroll fade-up
         const fadeObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
-                }
-            });
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
         });
         document.querySelectorAll('.scroll-fade-up').forEach(el => fadeObserver.observe(el));
-    </script>
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-
-    <script>
         // Lazy Load Audit Charts
         const auditCharts = document.getElementById('auditCharts');
         if (auditCharts) {
-            const createChart = (canvasId, labelId, targetValue, color) => {
-                const canvas = document.getElementById(canvasId);
-                const label = document.getElementById(labelId);
-                if (!canvas || !label) return;
-                const ctx = canvas.getContext('2d');
-                const chart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        datasets: [{
-                            data: [0, 100],
-                            backgroundColor: [color, '#e5e7eb'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        cutout: '75%',
-                        animation: {
-                            duration: 1500,
-                            easing: 'easeOutCubic',
-                            onProgress: function (animation) {
-                                const value = Math.min(Math.round((animation.currentStep / animation.numSteps) * targetValue), targetValue);
-                                label.textContent = `${value}%`;
-                            },
-                            onComplete: function () {
-                                label.textContent = `${targetValue}%`;
-                            }
-                        },
-                        plugins: {
-                            tooltip: { enabled: false },
-                            legend: { display: false }
-                        },
-                        accessibility: {
-                            enabled: true,
-                            description: `Doughnut chart showing ${labelId.replace('Value', '')} score of ${targetValue}%`
-                        }
-                    }
-                });
-                setTimeout(() => {
-                    chart.data.datasets[0].data = [targetValue, 100 - targetValue];
-                    chart.update();
-                }, 100);
-            };
-            const chartObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        createChart('performanceChart', 'performanceValue', 82, '#22c55e');
-                        createChart('accessibilityChart', 'accessibilityValue', 93, '#3b82f6');
-                        createChart('bestChart', 'bestValue', 96, '#f97316');
-                        createChart('seoChart', 'seoValue', 100, '#9333ea');
-                        observer.disconnect();
-                    }
-                });
-            }, { threshold: 0.2 });
-            chartObserver.observe(auditCharts);
+          const createChart = (canvasId, labelId, targetValue, color) => {
+            const canvas = document.getElementById(canvasId);
+            const label = document.getElementById(labelId);
+            if (!canvas || !label) return;
+            const ctx = canvas.getContext('2d');
+            const chart = new Chart(ctx, {
+              type: 'doughnut',
+              data: {
+                datasets: [{
+                  data: [0, 100],
+                  backgroundColor: [color, '#e5e7eb'],
+                  borderWidth: 0
+                }]
+              },
+              options: {
+                cutout: '75%',
+                animation: {
+                  duration: 1500,
+                  easing: 'easeOutCubic',
+                  onProgress: function (animation) {
+                    const value = Math.min(Math.round((animation.currentStep / animation.numSteps) * targetValue), targetValue);
+                    label.textContent = `${value}%`;
+                  },
+                  onComplete: function () {
+                    label.textContent = `${targetValue}%`;
+                  }
+                },
+                plugins: {
+                  tooltip: { enabled: false },
+                  legend: { display: false }
+                },
+                accessibility: {
+                  enabled: true,
+                  description: `Doughnut chart showing ${labelId.replace('Value', '')} score of ${targetValue}%`
+                }
+              }
+            });
+            setTimeout(() => {
+              chart.data.datasets[0].data = [targetValue, 100 - targetValue];
+              chart.update();
+            }, 100);
+          };
+          const chartObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                createChart('performanceChart', 'performanceValue', 82, '#22c55e');
+                createChart('accessibilityChart', 'accessibilityValue', 93, '#3b82f6');
+                createChart('bestChart', 'bestValue', 96, '#f97316');
+                createChart('seoChart', 'seoValue', 100, '#9333ea');
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.2 });
+          chartObserver.observe(auditCharts);
+        
+        
+        
         }
+        
     </script>
-
 </body>
 </html>
 
