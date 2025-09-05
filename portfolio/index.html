@@ -91,15 +91,26 @@
           ]
     </script>
     
-    <link href="dist/output.css" rel="stylesheet"/>
     
-    <!-- Preconnect to speed up font requests -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<!-- Load fonts with swap to avoid render-blocking -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-    <style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+    <link rel="preload" href="dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
+
+
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"></noscript>
+
+    
+
+     <style>
     :root{
       /* New Dark UI Colors */
       --bg:#0b0f14;
