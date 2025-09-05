@@ -2,13 +2,7 @@
 <html lang="en">
 <head>
    
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N8DCC2W8');</script>
-<!-- End Google Tag Manager -->
+   
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>From Code to Conversions: Technical Marketer | Michael Onoriode</title>
@@ -106,214 +100,281 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Load fonts with swap to avoid render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
     <style>
-        body {
-          font-family: 'Inter', sans-serif;
-          background-color: #f9fafb;
-          color: #333;
-        }
-        .section-title {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: #1a202c;
-          margin-bottom: 1.5rem;
-          border-bottom: 2px solid #e2e8f0;
-          padding-bottom: 0.5rem;
-          text-align: center;
-        }
-        .card {
-          background-color: #ffffff;
-          padding: 1.5rem;
-          border-radius: 1rem;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-          transition: transform 0.3s ease-in-out;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        .card:hover {
-          transform: translateY(-5px);
-        }
-        .skill-tag {
-          border-radius: 9999px;
-          padding: 0.375rem 0.75rem;
-          font-size: 0.875rem;
-          font-weight: 500;
-          white-space: nowrap;
-        }
-        .skill-tag-orange {
-          background-color: #fef3c7;
-          color: #b45309;
-        }
-        .skill-tag-emerald {
-          background-color: #d1fae5;
-          color: #065f46;
-        }
-        .skill-tag-blue {
-          background-color: #dbeafe;
-          color: #1e40af;
-        }
-        .skill-tag-gray {
-          background-color: #e5e7eb;
-          color: #374151;
-        }
-        .popup {
-          display: none;
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          background: white;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-          z-index: 9999;
-          max-width: 300px;
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        .popup.visible {
-          display: block;
-          opacity: 1;
-        }
-        .popup-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 10px;
-        }
-        .popup-title {
-          font-weight: bold;
-          font-size: 1.1rem;
-          color: #2c3e50;
-        }
-        .close-wrapper {
-          float: right;
-        }
-        .close-btn {
-          background-color: #e74c3c;
-          color: white;
-          border: none;
-          font-size: 0.9rem;
-          padding: 6px;
-          cursor: pointer;
-          border-radius: 6px;
-          width: 28px;
-          height: 28px;
-          text-align: center;
-          line-height: 1;
-        }
-        .portfolio-img {
-          width: 100%;
-          height: auto;
-          border-radius: 0.5rem;
-          margin-bottom: 1rem;
-        }
-        form input,
-        form button {
-          width: 100%;
-          margin: 8px 0;
-          padding: 10px;
-          font-size: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-        }
-        form button {
-          background-color: #3498db;
-          color: white;
-          border: none;
-          cursor: pointer;
-        }
-        .success {
-          color: green;
-          font-size: 0.9rem;
-        }
-        .error {
-          color: red;
-          font-size: 0.9rem;
-        }
-        .back-to-top {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color: #3498db;
-          color: white;
-          padding: 10px 15px;
-          border-radius: 50%;
-          font-size: 1rem;
-          cursor: pointer;
-          display: none;
-          z-index: 1000;
-        }
-        .back-to-top.visible {
-          display: block;
-        }
-        .mobile-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background-color: #ffffff;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          z-index: 40;
-          flex-direction: column;
-          padding: 1rem 0;
-        }
-        .mobile-menu.open {
-          display: flex;
-        }
-        .mobile-menu li {
-          width: 100%;
-          text-align: center;
-          padding: 0.75rem 0;
-          border-bottom: 1px solid #f0f0f0;
-        }
-        .mobile-menu li:last-child {
-          border-bottom: none;
-        }
-        .mobile-menu a {
-          display: block;
-          font-size: 1.1rem;
-          font-weight: 500;
-          color: #333;
-          padding: 0.5rem 0;
+    :root{
+      /* New Dark UI Colors */
+      --bg:#0b0f14;
+      --card:#121821;
+      --muted:#99a3b3;
+      --fg:#e8eef7;
+      --accent:#6ee7b7;
+      --accent2:#60a5fa;
+      --border:#1f2a37;
+      --chip:#0f1722;
 
-            /* Pulse animation — only for Start a Project */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
+      /* Keep the original colors for compatibility but they won't be used */
+      --light-bg: #f9fafb;
+      --dark-text: #333;
+      --heading-text: #1a202c;
+      --light-border: #e2e8f0;
+      --white-card: #ffffff;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+    }
+    .section-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--accent); /* Updated color */
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border); /* Updated color */
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+    .card {
+      background-color: var(--card); /* Updated color */
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Updated shadow for dark mode */
+      transition: transform 0.3s ease-in-out;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border); /* Added border */
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .skill-tag {
+      border-radius: 9999px;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .skill-tag-orange {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+    .skill-tag-emerald {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .skill-tag-blue {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    .skill-tag-gray {
+      background-color: #e5e7eb;
+      color: #374151;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--card); /* Updated color */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35); /* Updated shadow */
+      z-index: 9999;
+      max-width: 300px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border: 1px solid var(--border);
+    }
+    .popup.visible {
+      display: block;
+      opacity: 1;
+    }
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .popup-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--fg); /* Updated color */
+    }
+    .close-wrapper {
+      float: right;
+    }
+    .close-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      font-size: 0.9rem;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      line-height: 1;
+    }
+    .portfolio-img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    form input,
+    form button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid var(--border); /* Updated color */
+      border-radius: 5px;
+      background-color: var(--chip); /* New color for input fields */
+      color: var(--fg);
+    }
+    form button {
+      background-color: var(--accent2); /* Updated color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .success {
+      color: var(--accent); /* Updated color */
+      font-size: 0.9rem;
+    }
+    .error {
+      color: #e74c3c; /* Kept red for error messages */
+      font-size: 0.9rem;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent2); /* Updated color */
+      color: var(--bg);
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    .back-to-top.visible {
+      display: block;
+    }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--card); /* Updated color */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Updated shadow */
+      z-index: 40;
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu li {
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border); /* Updated color */
+    }
+    .mobile-menu li:last-child {
+      border-bottom: none;
+    }
+    .mobile-menu a {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--fg); /* Updated color */
+      padding: 0.5rem 0;
+    }
 
-/* Start a Project CTA */
-.hero-cta-animate {
-  animation: pulse 2s infinite ease-in-out;
-  transition: transform 0.2s ease-in-out;
-}
-.hero-cta-animate:hover {
-  transform: scale(1.05);
-}
+    /* Collapsible Styles */
+    .collapsible-container {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 12px;
+        background: var(--card);
+        margin: 10px 0;
+        transition: transform 0.3s ease;
+    }
 
-/* Prefer-reduced-motion safety */
-@media (prefers-reduced-motion: reduce) {
-  .hero-cta-animate { animation: none; transition: none; }
-}
+    .collapsible-container:hover {
+        transform: translateY(-5px);
+    }
+    
+    .collapsible-summary {
+        padding: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        color: var(--accent);
+    }
+    
+    .collapsible-summary::-webkit-details-marker {
+        display: none;
+    }
+    
+    .collapsible-summary::after {
+        content: '\25b6';
+        float: right;
+        font-size: 1.5rem;
+        transition: transform 0.5s ease;
+    }
+    
+    .collapsible-container[open] .collapsible-summary::after {
+        content: '\25bc';
+        transform: rotate(900deg);
+    }
+    
+    .collapsible-content {
+        padding: 0 2rem 2rem;
+    }
 
-/* Scroll fade-up — for Explore My Work */
-.scroll-fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
-.scroll-fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+    /* Pulse animation — only for Start a Project */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
 
-/* Add delay just to Explore My Work button */
-.explore-delay {
-  transition-delay: 1s;
-}
-    </style>
+    /* Start a Project CTA */
+    .hero-cta-animate {
+      animation: pulse 2s infinite ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    .hero-cta-animate:hover {
+      transform: scale(1.05);
+    }
+
+    /* Prefer-reduced-motion safety */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-cta-animate { animation: none; transition: none; }
+    }
+
+    /* Scroll fade-up — for Explore My Work */
+    .scroll-fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .scroll-fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Add delay just to Explore My Work button */
+    .explore-delay {
+      transition-delay: 1s;
+    }
+</style>
 </head>
 <body class="antialiased bg-stone-100 text-gray-800">
     <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N8DCC2W8" style="display:none;visibility:hidden" width="0"></iframe></noscript>
@@ -577,9 +638,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 bg-white rounded-lg shadow-lg" id="portfolio">
     <h2 class="section-title">Portfolio Case Studies</h2>
     <div class="max-w-4xl mx-auto text-justify space-y-12">
+        
+
+
         <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-    <h3 class="text-xl font-bold mb-6 text-orange-700"> Case Study: Strategic Organic Traffic & Growth for a New E-commerce Brand</h3>
+            <div class="prose max-w-none p-6 md:p-8 lg:p-10"><details class="collapsible-container"> 
+
+
+<summary class="collapsible-summary"> 
+
+
+    <h3 class="text-xl font-bold mb-6 text-orange-700"> Case Study: Strategic Organic Traffic & Growth for a New E-commerce Brand</h3></summary>
     <p class="leading-relaxed">
         <strong>The Challenge:</strong>
         The online fragrance market was saturated and highly competitive. The business was a new entrant with a zero-dollar budget for launch, limited brand awareness, and no clear <strong>Product-Market Fit (PMF)</strong> for the broader, price-sensitive market.
@@ -646,12 +715,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
             </div>
+            
         </div>
-       
+        </details>
+       </div>
         
         <div class="grid md:grid-cols-2 gap-8 items-center">
     <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Architecting a Data-Driven Lead Generation System</h3>
+      <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary">   <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Architecting a Data-Driven Lead Generation System</h3></summary>
         <p class="leading-relaxed">
             <strong>The Challenge:</strong> The client needed a robust lead generation system to acquire new clients and scale, but was operating in a highly competitive market. They lacked a dedicated sales team, and their current capacity was a bottleneck to growth.
         </p>
@@ -719,12 +794,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </div>
     </div>
+   
+</div>
+</details>
 </div>
         
 
 <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
     <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <h3 class="text-xl font-bold text-orange-700">Case Study: Applying Strategic Frameworks, Analytics and Coding Skills, to Building Kevs Digital Agency</h3>
+      <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary">   <h3 class="text-xl font-bold text-orange-700">Case Study: Applying Strategic Frameworks, Analytics and Coding Skills, to Building Kevs Digital Agency</h3></summary>
         <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             As a new digital services agency, Kevs Digital faced the challenge of establishing credibility and a scalable business model in a highly competitive market. A <strong>SWOT Analysis</strong> revealed key weaknesses like <strong>zero brand awareness</strong> and <strong>no prior portfolio</strong>, alongside external threats from <strong>intense competition</strong> and <strong>economic instability</strong> impacting SME budgets. These factors made it crucial to differentiate and build trust from the ground up.
@@ -855,9 +937,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </div>
     </div>
+    </details>
+    </div>
 
    <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-    <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Strategic Insight on Ads & Funnel Optimization</h3>
+   <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary">  <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Strategic Insight on Ads & Funnel Optimization</h3></summary>
     <p class="leading-relaxed">
         <strong>The Challenge:</strong>
         During an evaluation process with a <strong>highly rated healthcare brand</strong>, I was challenged on the importance of ad experience. 
@@ -895,6 +983,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 </div>
 
+
 <div class="p-6 md:p-8 lg:p-10">
     <div class="flex flex-col space-y-6">
         <div>
@@ -907,11 +996,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </div>
 </div>
+</details>
+</div>
    
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
        <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <h3 class="text-xl font-bold text-orange-700">Case Study: Brand Identity & E-commerce Strategy for a Branding Company</h3>
+        <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary"> <h3 class="text-xl font-bold text-orange-700">Case Study: Brand Identity & E-commerce Strategy for a Branding Company</h3></summary>
         <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             The branding & Fashion company was struggling to articulate its own value proposition to its ideal client. They needed a strategic rebranding to improve their own business development efforts and attract high-value clients.
@@ -943,10 +1038,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 </div>
 </div>
+</details>
+</div>
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
    <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy Roadmap for a Premium Fashion Outfit</h3>
+       <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary">  <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy Roadmap for a Premium Fashion Outfit</h3></summary>
         <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             The premium fashion outfit needed to address digital inefficiencies, including a confusing user experience and disconnected online channels. The business lacked a unified digital strategy, resulting in lost sales and audience confusion.
@@ -977,11 +1078,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </div>
 </div>
-
+</details>
+</div>
        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       
           <div class="prose max-w-none p-6 md:p-8 lg:p-10">
-        <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy for a Publishing Media Outfit</h3>
+        <details class="collapsible-container"> 
+
+
+
+<summary class="collapsible-summary"> <h3 class="text-xl font-bold text-orange-700">Case Study: Digital Strategy for a Publishing Media Outfit</h3></summary>
         <p class="leading-relaxed">
             <strong>The Challenge:</strong>
             A traditional publishing house wanted to transition to a modern digital platform. Their primary challenge was increasing online visibility and audience engagement without a clear digital strategy.
@@ -1014,6 +1120,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 
+</div>
+</details>
 </div>
 </section>
         <section class="py-12 bg-white rounded-lg shadow-lg" id="audit">
@@ -1111,167 +1219,185 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p aria-live="polite" id="message"></p>
         </form>
     </div>
-    <button aria-label="Back to top" class="back-to-top" id="back-to-top" tabindex="0">↑ Top</button>
-    <script defer="" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <button aria-label="Back to top" class="back-to-top" id="back-to-top" tabindex="0">↑ Top</button><!-- GTM starts-->
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N8DCC2W8');</script>
+    <!-- gtm ends -->
     <script>
         // Mobile Menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton?.addEventListener('click', () => mobileMenu?.classList.toggle('open'));
         mobileMenu?.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+            link.addEventListener('click', () => mobileMenu.classList.remove('open'));
         });
+        
         // Popup & Form
         const popup = document.getElementById('popup');
         const leadForm = document.getElementById('leadForm');
         const message = document.getElementById('message');
         const closeBtn = document.querySelector('.close-btn');
+
         function showPopup() {
-          if (popup && sessionStorage.getItem('popupShown') !== 'true') {
-            popup.classList.add('visible');
-            sessionStorage.setItem('popupShown', 'true');
-          }
-        }
-        function hidePopup() {
-          popup?.classList.remove('visible');
-        }
-        closeBtn?.addEventListener('click', hidePopup);
-        leadForm?.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const name = document.getElementById('name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          message.textContent = '';
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            message.textContent = 'Please enter a valid email address.';
-            message.className = 'error';
-            return;
-          }
-          try {
-            const response = await fetch('/.netlify/functions/subscribe', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, email })
-            });
-            
-              if (response.ok) {
-              // Add the GTM dataLayer push here
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({
-                'event': 'form_submit_complete'
-              });
-    // GTM layer end
-                
-              message.textContent = '🎉 Subscribed successfully!';
-              message.className = 'success';
-              leadForm.reset();
-              
-              // The popup will now hide after 3 seconds
-              setTimeout(() => {
-                  hidePopup();
-              }, 3000); 
-        }
-              
-              else {
-              const errorData = await response.json();
-              message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
-              message.className = 'error';
+            if (popup && sessionStorage.getItem('popupShown') !== 'true') {
+                popup.classList.add('visible');
+                sessionStorage.setItem('popupShown', 'true');
             }
-          } catch (error) {
-            message.textContent = '⚠️ Network error: ' + error.message;
-            message.className = 'error';
-          }
-        });
-        if (sessionStorage.getItem('popupShown') === 'true' && popup) {
-          popup.classList.remove('visible');
         }
+        
+        function hidePopup() {
+            popup?.classList.remove('visible');
+        }
+        
+        closeBtn?.addEventListener('click', hidePopup);
+        
+        leadForm?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            message.textContent = '';
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                message.textContent = 'Please enter a valid email address.';
+                message.className = 'error';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/.netlify/functions/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email })
+                });
+                
+                if (response.ok) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'form_submit_complete'
+                    });
+                    
+                    message.textContent = '🎉 Subscribed successfully!';
+                    message.className = 'success';
+                    leadForm.reset();
+                    
+                    setTimeout(() => {
+                        hidePopup();
+                    }, 3000); 
+                } else {
+                    const errorData = await response.json();
+                    message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
+                    message.className = 'error';
+                }
+            } catch (error) {
+                message.textContent = '⚠️ Network error: ' + error.message;
+                message.className = 'error';
+            }
+        });
+        
+        if (sessionStorage.getItem('popupShown') === 'true' && popup) {
+            popup.classList.remove('visible');
+        }
+
         // Scroll event listener for popup and back-to-top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
-          const scrollTop = window.scrollY || document.documentElement.scrollTop;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrollDepth = scrollTop / docHeight;
-          if (scrollDepth > 0.5) {
-            showPopup();
-          }
-          if (scrollTop > 300) {
-            backToTop?.classList.add('visible');
-          } else {
-            backToTop?.classList.remove('visible');
-          }
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollDepth = scrollTop / docHeight;
+            
+            if (scrollDepth > 0.5) {
+                showPopup();
+            }
+            if (scrollTop > 300) {
+                backToTop?.classList.add('visible');
+            } else {
+                backToTop?.classList.remove('visible');
+            }
         });
+        
         backToTop?.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        
         // Scroll fade-up
         const fadeObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-              observer.unobserve(entry.target);
-            }
-          });
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
         });
         document.querySelectorAll('.scroll-fade-up').forEach(el => fadeObserver.observe(el));
+    </script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <script>
         // Lazy Load Audit Charts
         const auditCharts = document.getElementById('auditCharts');
         if (auditCharts) {
-          const createChart = (canvasId, labelId, targetValue, color) => {
-            const canvas = document.getElementById(canvasId);
-            const label = document.getElementById(labelId);
-            if (!canvas || !label) return;
-            const ctx = canvas.getContext('2d');
-            const chart = new Chart(ctx, {
-              type: 'doughnut',
-              data: {
-                datasets: [{
-                  data: [0, 100],
-                  backgroundColor: [color, '#e5e7eb'],
-                  borderWidth: 0
-                }]
-              },
-              options: {
-                cutout: '75%',
-                animation: {
-                  duration: 1500,
-                  easing: 'easeOutCubic',
-                  onProgress: function (animation) {
-                    const value = Math.min(Math.round((animation.currentStep / animation.numSteps) * targetValue), targetValue);
-                    label.textContent = `${value}%`;
-                  },
-                  onComplete: function () {
-                    label.textContent = `${targetValue}%`;
-                  }
-                },
-                plugins: {
-                  tooltip: { enabled: false },
-                  legend: { display: false }
-                },
-                accessibility: {
-                  enabled: true,
-                  description: `Doughnut chart showing ${labelId.replace('Value', '')} score of ${targetValue}%`
-                }
-              }
-            });
-            setTimeout(() => {
-              chart.data.datasets[0].data = [targetValue, 100 - targetValue];
-              chart.update();
-            }, 100);
-          };
-          const chartObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                createChart('performanceChart', 'performanceValue', 82, '#22c55e');
-                createChart('accessibilityChart', 'accessibilityValue', 93, '#3b82f6');
-                createChart('bestChart', 'bestValue', 96, '#f97316');
-                createChart('seoChart', 'seoValue', 100, '#9333ea');
-                observer.disconnect();
-              }
-            });
-          }, { threshold: 0.2 });
-          chartObserver.observe(auditCharts);
+            const createChart = (canvasId, labelId, targetValue, color) => {
+                const canvas = document.getElementById(canvasId);
+                const label = document.getElementById(labelId);
+                if (!canvas || !label) return;
+                const ctx = canvas.getContext('2d');
+                const chart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [0, 100],
+                            backgroundColor: [color, '#e5e7eb'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        cutout: '75%',
+                        animation: {
+                            duration: 1500,
+                            easing: 'easeOutCubic',
+                            onProgress: function (animation) {
+                                const value = Math.min(Math.round((animation.currentStep / animation.numSteps) * targetValue), targetValue);
+                                label.textContent = `${value}%`;
+                            },
+                            onComplete: function () {
+                                label.textContent = `${targetValue}%`;
+                            }
+                        },
+                        plugins: {
+                            tooltip: { enabled: false },
+                            legend: { display: false }
+                        },
+                        accessibility: {
+                            enabled: true,
+                            description: `Doughnut chart showing ${labelId.replace('Value', '')} score of ${targetValue}%`
+                        }
+                    }
+                });
+                setTimeout(() => {
+                    chart.data.datasets[0].data = [targetValue, 100 - targetValue];
+                    chart.update();
+                }, 100);
+            };
+            const chartObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        createChart('performanceChart', 'performanceValue', 82, '#22c55e');
+                        createChart('accessibilityChart', 'accessibilityValue', 93, '#3b82f6');
+                        createChart('bestChart', 'bestValue', 96, '#f97316');
+                        createChart('seoChart', 'seoValue', 100, '#9333ea');
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.2 });
+            chartObserver.observe(auditCharts);
         }
     </script>
+
 </body>
 </html>
 
