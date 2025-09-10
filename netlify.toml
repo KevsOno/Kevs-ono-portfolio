@@ -21,3 +21,12 @@ package = "@netlify/plugin-functions-install-core"
 # This plugin automatically generates a sitemap for your site on every build.
 [[plugins]]
 package = "@netlify/plugin-sitemap"
+
+
+
+
+  [plugins.inputs]
+    baseUrl = "https://kevs-ono-portfolio.netlify.app/"
+    buildDir = "portfolio"
+    prettyURLs = true
+    trailingSlash = false
