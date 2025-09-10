@@ -1,3 +1,4 @@
+# This section contains the main build settings for your site.
 [build]
   # This is the command Netlify runs to build your site.
   command = "npm run build"
@@ -5,9 +6,18 @@
   # This is the directory where your main website files are.
   publish = "portfolio"
 
+# This section is for configuring serverless functions.
 [functions]
   # This tells Netlify where to find your serverless functions.
   directory = "netlify/functions"
 
+# This section lists all the plugins you want to use.
+# Netlify will run these plugins during the build process.
+
+# This plugin ensures that core functions dependencies are installed.
 [[plugins]]
 package = "@netlify/plugin-functions-install-core"
+
+# This plugin automatically generates a sitemap for your site on every build.
+[[plugins]]
+package = "@netlify/plugin-sitemap"
