@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kevs-ono-portfolio.netlify.app/sitemap.xml
