@@ -188,40 +188,36 @@ form button {
 }
 
 .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 40;
-    flex-direction: column;
-    padding: 1rem 0;
-}
-
-.mobile-menu.open {
-    display: flex;
-}
-
-.mobile-menu li {
-    width: 100%;
-    text-align: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.mobile-menu li:last-child {
-    border-bottom: none;
-}
-
-.mobile-menu a {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #333;
-    padding: 0.5rem 0;
-}
+      display: none; /* Hidden by default */
+      position: absolute;
+      top: 100%; /* Position right below the header */
+      left: 0;
+      width: 100%;
+      background-color: #ffffff; /* Same as header background */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 40; /* Below sticky header but above content */
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+    .mobile-menu.open {
+      display: flex; /* Show when 'open' class is added */
+    }
+    .mobile-menu li {
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f0f0f0; /* Separator for links */
+    }
+    .mobile-menu li:last-child {
+      border-bottom: none;
+    }
+    .mobile-menu a {
+      display: block; /* Make links fill the list item */
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      padding: 0.5rem 0;
+    }
 
 /* Pulse animation — only for Start a Project */
 @keyframes pulse {
