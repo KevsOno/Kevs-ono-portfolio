@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Marketing & Persona Discovery Questionnaire</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1, h2 { color: #1a1a1a; }
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: bold; }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    textarea { height: 120px; resize: vertical; }
+    small { color: #666; display: block; margin-top: 5px; font-size: 0.9rem; }
+    .required:after { content: " *"; color: #e63946; }
+    button {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover { background-color: #0056b3; }
+    .privacy-notice { font-size: 0.9rem; color: #666; margin-top: 20px; }
+    .progress-bar { margin-bottom: 20px; }
+    .progress-bar div {
+      width: 33%;
+      height: 5px;
+      background: #007bff;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Artist Marketing & Persona Discovery Questionnaire</h1>
+  <p>Thank you for taking the time to fill this out. This questionnaire is designed to help Kevs Digital understand your vision, your existing audience, and your goals so we can create a powerful and effective marketing strategy. The more details provided, the more we can tailor our approach to your unique brand.</p>
+
+  <form action="https://formspree.io/f/xldprdea" method="POST">
+    <input type="hidden" name="_next" value="https://kevs-ono-portfolio.netlify.app/thank_you.html">
+    <input type="hidden" name="_gotcha" style="display: none;">
+
+    <div class="progress-bar">
+      <small>Step 1 of 3: Artistic Identity</small>
+      <div></div>
+    </div>
+
+    <h2>Part 1: Artistic Identity & Goals</h2>
+    <div class="form-group">
+      <label for="artist-name" id="artist-name-label" class="required">1. Artist Name:</label>
+      <input type="text" id="artist-name" name="artist-name" value="BrotherE4U" aria-labelledby="artist-name-label" required placeholder="Your stage name">
+    </div>
+    <div class="form-group">
+      <label for="music-genre" class="required">2. Music Genre(s):</label>
+      <select id="music-genre" name="music-genre" multiple required>
+        <option value="afrobeats">Afrobeats</option>
+        <option value="rnb">Alternative R&B</option>
+        <option value="amapiano">Amapiano</option>
+        <option value="indie-pop">Indie Pop</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" id="music-genre-other" name="music-genre-other" placeholder="Specify other genres">
+      <small>Select all that apply or specify "Other" above.</small>
+    </div>
+    <div class="form-group">
+      <label for="artist-why">3. What is the core message or emotion you want to convey with your music? Why do you make music:</label>
+      <textarea id="artist-why" name="artist-why" maxlength="500" placeholder="What drives you to make music?"></textarea>
+      <small id="artist-why-counter">0/500 characters</small>
+      <small>e.g., "I make music to inspire hope."</small>
+    </div>
+    <div class="form-group">
+      <label for="initial-audience-thoughts" class="required">4. Target Audience:</label>
+      <textarea id="initial-audience-thoughts" name="initial-audience-thoughts" maxlength="500" required placeholder="Who are your fans?"></textarea>
+      <small>e.g., Age range, interests, location</small>
+    </div>
+    <div class="form-group">
+      <label for="audience-demographics">5. Audience Demographics:</label>
+      <textarea id="audience-demographics" name="audience-demographics" maxlength="500" placeholder="e.g., 18-24, mostly female, Nigeria"></textarea>
+      <small>Specify age, gender, top countries/cities.</small>
+    </div>
+    <div class="form-group">
+      <label for="long-term-goals">6. Long-Term Goals:</label>
+      <textarea id="long-term-goals" name="long-term-goals" maxlength="500" placeholder="Where do you see your music career in 5 years?"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="artist-persona">7. Your Persona:</label>
+      <textarea id="artist-persona" name="artist-persona" maxlength="500" placeholder="How would you describe your artistic persona? Is it a true reflection of you, or a created character? e.g., The Rebel, The Storyteller, The Party Starter, The Social Commentator."></textarea>
+    </div>
+    <div class="form-group">
+      <label for="influences-collaborators">8. Key Collaborators & Influences:</label>
+      <textarea id="influences-collaborators" name="influences-collaborators" maxlength="500" placeholder="e.g., List 3-5 artists, both within and outside your genre, that you admire or who influence your sound and brand. Are there any specific producers, songwriters, or other creatives you would love to work with?"></textarea>
+    </div>
+
+    <h2>Part 2: Existing Audience & Data</h2>
+    <div class="form-group">
+      <label for="streaming-analytics">9. Streaming Platform Analytics:</label>
+      <textarea id="streaming-analytics" name="streaming-analytics" maxlength="500" placeholder="e.g., Spotify: 1,200 monthly listeners, top cities: Lagos, Nairobi"></textarea>
+      <small>Share key stats (e.g., monthly listeners, top countries).</small>
+    </div>
+    <div class="form-group">
+      <label for="social-platforms">10. Primary Social Media Platforms:</label>
+      <select id="social-platforms" name="social-platforms" multiple>
+        <option value="instagram">Instagram</option>
+        <option value="tiktok">TikTok</option>
+        <option value="x">X</option>
+        <option value="youtube">YouTube</option>
+      </select>
+      <small>Where is your audience most active?</small>
+    </div>
+    <div class="form-group">
+      <label for="social-analytics">11. Social Media Analytics:</label>
+      <textarea id="social-analytics" name="social-analytics" maxlength="500" placeholder="e.g., Instagram: 500 followers, 10% engagement rate"></textarea>
+      <small>Share key stats (e.g., followers, engagement rate).</small>
+    </div>
+    <div class="form-group">
+      <label for="has-email-list">12. Do you have an email list?</label>
+      <select id="has-email-list" name="has-email-list">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+    <div class="form-group" id="email-list-details" style="display: none;">
+      <label for="email-list">13. Email List Details:</label>
+      <textarea id="email-list" name="email-list" maxlength="500" placeholder="e.g., 500 subscribers on Mailchimp"></textarea>
+      <small>Size of list, platform used.</small>
+    </div>
+    <div class="form-group">
+      <label for="fan-feedback">14. Fan Feedback:</label>
+      <textarea id="fan-feedback" name="fan-feedback" maxlength="500" placeholder="What are some common comments or DMs you receive from your fans? What do they love most about your music or brand?"></textarea>
+    </div>
+
+    <h2>Part 3: The "Ideal Fan" & Marketing Insights</h2>
+    <div class="form-group">
+      <label for="music-discovery">15. Music Discovery:</label>
+      <textarea id="music-discovery" name="music-discovery" maxlength="500" placeholder="How do you believe your fans typically discover your music? e.g., Spotify playlists, TikTok sounds, friend recommendations, seeing a live show, etc."></textarea>
+      <small>e.g., Playlists, social media, live shows</small>
+    </div>
+    <div class="form-group">
+      <label for="listening-habits">16. Listening Habits:</label>
+      <textarea id="listening-habits" name="listening-habits" maxlength="500" placeholder="Describe how your fans listen to your music. e.g., While studying, at the gym, at parties, for a road trip, to relax, etc.?"></textarea>
+      <small>e.g., Streaming, car rides, parties</small>
+    </div>
+    <div class="form-group">
+      <label for="content-engagement">17. Content Engagement:</label>
+      <textarea id="content-engagement" name="content-engagement" maxlength="500" placeholder="What kind of content do you notice your fans engaging with most? e.g., Live performance clips, funny memes/skits, behind-the-scenes content, lyrical quotes, etc.?"></textarea>
+      <small>e.g., Behind-the-scenes, live performances</small>
+    </div>
+    <div class="form-group">
+      <label for="merch-experiences">18. Merchandise & Experiences:</label>
+      <textarea id="merch-experiences" name="merch-experiences" maxlength="500" placeholder="If you were to sell merchandise, what kind of items do you think your fans would be most interested in? (e.g., T-shirts, hats, vinyl, stickers) What kind of "experiences" would your fans pay for?"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="pain-points">19. Pain Points:</label>
+      <textarea id="pain-points" name="pain-points" maxlength="500" placeholder="What do you think are some of the frustrations or "pain points" your fans might have when it comes to music or the industry? e.g., "Mainstream music is boring," "I want more intimate connection with artists," "Tickets are too expensive. What challenges do you face in reaching fans?"></textarea>
+    </div>
+
+    <p class="privacy-notice">Your data is secure and will only be used for your marketing strategy. See our <a href="https://kevs-ono-portfolio.netlify.app/privacy_policy.html">Privacy Policy</a>.</p>
+    <button type="submit">Submit Questionnaire</button>
+  </form>
+
+  <script>
+    document.getElementById('artist-why').addEventListener('input', function() {
+      document.getElementById('artist-why-counter').textContent = `${this.value.length}/500 characters`;
+    });
+    document.getElementById('artist-name').addEventListener('input', function() {
+      document.getElementById('artist-name-display').textContent = this.value || 'Artist';
+    });
+    document.getElementById('has-email-list').addEventListener('change', function() {
+      document.getElementById('email-list-details').style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
