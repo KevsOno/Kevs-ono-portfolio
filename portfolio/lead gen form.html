@@ -42,53 +42,63 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const leadForm = document.getElementById('leadForm');
-            const message = document.getElementById('message');
+    document.addEventListener('DOMContentLoaded', function() {
+        const leadForm = document.getElementById('leadForm');
+        const message = document.getElementById('message');
 
-            leadForm?.addEventListener('submit', async function(e) {
-                e.preventDefault();
+        leadForm?.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const messageText = document.getElementById('message-text').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const messageText = document.getElementById('message-text').value.trim();
 
-                message.textContent = '';
+            message.textContent = '';
 
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    message.textContent = 'Please enter a valid email address.';
-                    message.className = 'error';
-                    return;
-                }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                message.textContent = 'Please enter a valid email address.';
+                message.className = 'error';
+                return;
+            }
 
-                try {
-                    const response = await fetch('/.netlify/functions/subscribe', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, email, message: messageText })
+            try {
+                // The current code is set up to post data to a Netlify Function
+                const response = await fetch('/.netlify/functions/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message: messageText })
+                });
+
+                if (response.ok) {
+                    // 1. Display the success message and clear the form
+                    message.textContent = '🎉 Your message has been sent successfully! Redirecting you now...';
+                    message.className = 'success';
+                    leadForm.reset();
+
+                    // Send an event to Google Tag Manager
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'form_submit_complete'
                     });
+                    
+                    // 2. Wait for 3 seconds before redirecting
+                    setTimeout(() => {
+                        // 3. Perform the redirect
+                        window.location.href = 'https://kevs-ono-portfolio.netlify.app/thank_you.html';
+                    }, 3000); // 3000 milliseconds = 3 seconds
 
-                    if (response.ok) {
-                        window.dataLayer = window.dataLayer || [];
-                        window.dataLayer.push({
-                            'event': 'form_submit_complete'
-                        });
-
-                        message.textContent = '🎉 Your message has been sent successfully!';
-                        message.className = 'success';
-                        leadForm.reset();
-                    } else {
-                        const errorData = await response.json();
-                        message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
-                        message.className = 'error';
-                    }
-                } catch (error) {
-                    message.textContent = '⚠️ Network error: ' + error.message;
+                } else {
+                    const errorData = await response.json();
+                    message.textContent = '❌ Error: ' + (errorData.message || 'Something went wrong.');
                     message.className = 'error';
                 }
-            });
+            } catch (error) {
+                message.textContent = '⚠️ Network error: ' + error.message;
+                message.className = 'error';
+            }
         });
+    });
     </script>
 </body>
 </html>
