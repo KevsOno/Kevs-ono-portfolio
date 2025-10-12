@@ -401,18 +401,33 @@ print(response.choices[0].message['content'])  # Outputs: Positive
                     </li>
                 </ul>
             </div>
-            <h2 class="section-title">Leave a Comment</h2>
-            <div class="card">
-                <p>Share your thoughts or questions below! (Comments are moderated and will appear after approval.)</p>
-                <form action="/submit-comment" method="POST">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="comment">Comment:</label><br>
-                    <textarea id="comment" name="comment" rows="4" style="width: 100%;" required></textarea><br>
-                    <button type="submit" class="cta-button">Submit</button>
-                </form>
-            </div>
-            <h2 class="section-title">Share This Post</h2>
+            <h2 class="section-title" id="comments-section">Comments</h2>
+
+<div class="card comment-form-container">
+    <form id="commentForm">
+        <h3>Leave a Comment</h3>
+        
+        <input type="hidden" id="postId" name="postId" value="social-media-sales-post"> 
+        
+        <input type="text" id="commenterName" name="commenterName" placeholder="Your Name" required>
+        <input type="email" id="commenterEmail" name="commenterEmail" placeholder="Your Email (won't be published)" required>
+        <textarea id="commentText" name="commentText" placeholder="Your Comment" rows="4" required></textarea>
+        
+        <button type="submit" class="cta-button">Post Comment</button>
+    </form>
+    <p id="commentMessage" class="message"></p>
+</div>
+
+<div class="card comments-display-container" style="margin-top: 2rem;">
+    <h3>Recent Comments (<span id="commentCount">0</span>)</h3>
+    <div id="commentsList">
+        <p>Loading comments...</p>
+    </div>
+</div>
+
+<h2 class="section-title">Share This Post</h2>
+        
+        
             <div class="card">
                 <p>Love this post? Share it!</p>
                 <div class="social-share">
@@ -467,6 +482,107 @@ print(response.choices[0].message['content'])  # Outputs: Positive
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        
+        // Existing script for mobile menu and back-to-top is here...
+
+        // ----------------------------------------------------------------
+        // NEW COMMENT SECTION JAVASCRIPT
+        // ----------------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('commentForm');
+            const commentsList = document.getElementById('commentsList');
+            const commentCount = document.getElementById('commentCount');
+            const commentMessage = document.getElementById('commentMessage');
+            // Get the unique post ID from the hidden field
+            const postId = document.getElementById('postId')?.value; 
+
+            // --- A. FUNCTION TO FETCH AND RENDER COMMENTS (GET) ---
+            async function fetchComments() {
+                commentsList.innerHTML = '<p>Loading comments...</p>';
+                if (!postId) {
+                    commentsList.innerHTML = '<p class="error">Post ID is missing. Cannot load comments.</p>';
+                    return;
+                }
+
+                try {
+                    // Calls the new getComments.js function
+                    const response = await fetch('/.netlify/functions/getComments?postId=' + postId);
+                    
+                    if (response.ok) {
+                        const comments = await response.json();
+                        commentsList.innerHTML = '';
+                        commentCount.textContent = comments.length;
+
+                        if (comments.length === 0) {
+                            commentsList.innerHTML = '<p>Be the first to leave a comment!</p>';
+                        } else {
+                            comments.forEach(comment => {
+                                const commentDiv = document.createElement('div');
+                                commentDiv.className = 'single-comment';
+                                // Simple styling for comments
+                                commentDiv.style.borderBottom = '1px solid #e2e8f0';
+                                commentDiv.style.padding = '1rem 0';
+                                commentDiv.innerHTML = `
+                                    <h4 style="font-weight: 600; margin-bottom: 0.25rem;">${comment.name}</h4>
+                                    <p style="margin-bottom: 0.5rem; font-size: 0.95rem;">${comment.text}</p>
+                                    <small style="color: #6b7280; font-size: 0.8rem;">${new Date(comment.createdAt).toLocaleDateString()}</small>
+                                `;
+                                commentsList.appendChild(commentDiv);
+                            });
+                        }
+                    } else {
+                        commentsList.innerHTML = '<p class="message error">Could not load comments. Please try again later.</p>';
+                    }
+                } catch (error) {
+                    console.error('Error fetching comments:', error);
+                    commentsList.innerHTML = '<p class="message error">Network error while loading comments.</p>';
+                }
+            }
+
+            // --- B. FORM SUBMISSION HANDLER (POST) ---
+            commentForm?.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('commenterName').value.trim();
+                const email = document.getElementById('commenterEmail').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+
+                commentMessage.textContent = 'Posting...';
+                
+                try {
+                    // Calls the new addComment.js function
+                    const response = await fetch('/.netlify/functions/addComment', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            postId, 
+                            name, 
+                            email, 
+                            text 
+                        })
+                    });
+
+                    if (response.ok) {
+                        commentMessage.textContent = '✅ Comment posted successfully! (Will appear after moderation)';
+                        commentMessage.className = 'message success';
+                        commentForm.reset();
+                        // Do not fetch immediately, as it is awaiting moderation
+                    } else {
+                        const errorData = await response.json();
+                        commentMessage.textContent = '❌ Error posting comment: ' + (errorData.message || 'Something went wrong.');
+                        commentMessage.className = 'message error';
+                    }
+                } catch (error) {
+                    commentMessage.textContent = '⚠️ Network error: ' + error.message;
+                    commentMessage.className = 'message error';
+                }
+            });
+
+            // Initial call to load comments when the page loads
+            fetchComments();
+        });
+        // ----------------------------------------------------------------
     </script>
 </body>
 </html>
