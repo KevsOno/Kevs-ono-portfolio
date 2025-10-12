@@ -7,8 +7,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@getbrevo/brevo": "^1.0.0",   // Required for Brevo
-    "mongodb": "^6.2.0",            // Required for MongoDB
-    "google-spreadsheet": "^4.1.2"  // Required for your new Google Sheet plan
+    "@getbrevo/brevo": "^1.0.0",   
+    "mongodb": "^6.2.0",            
+    "google-spreadsheet": "^4.1.2" 
   }
 }
