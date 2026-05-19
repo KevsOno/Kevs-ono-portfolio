@@ -7,8 +7,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@getbrevo/brevo": "^1.0.0",   
-    "mongodb": "^6.2.0",            
-    "google-spreadsheet": "^4.1.2" 
+    "@getbrevo/brevo": "^1.0.0",
+    "mongodb": "^6.2.0",
+    "google-spreadsheet": "^4.1.2",
+    "node-fetch": "^2.7.0"
   }
 }
