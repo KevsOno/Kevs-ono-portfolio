@@ -765,6 +765,80 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 bg-white rounded-lg shadow-lg" id="portfolio">
     <h2 class="section-title">Portfolio Case Studies</h2>
 
+
+
+
+<div class="max-w-4xl mx-auto text-justify space-y-12">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="prose max-w-none p-6 md:p-8 lg:p-10">
+            <details class="collapsible-container">
+                <summary class="collapsible-summary">
+                    <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Zero‑Budget Inventory Intelligence – Identifying ₦1.2M–₦2M Monthly Expiry Risk</h3>
+                </summary>
+                <p class="leading-relaxed">
+                    <strong>The Business Problem:</strong> Penafort was writing off goods worth <strong>₦1.2–2 million every month</strong> due to product expiry. Their existing ERP could not accurately track expiring items across 36,000+ SKUs, nor monitor stock levels (surplus or low stock) to advise on transfers or procurement. The result: preventable losses and missed opportunities to rebalance inventory.
+                </p>
+                <p class="leading-relaxed">
+                    <strong>The Zero‑Budget Solution:</strong> I engineered a production system using only free tiers: <strong>Streamlit</strong> for dashboard, <strong>Supabase (PostgreSQL)</strong> for database and scheduled jobs. No ad spend, no paid tools.
+                </p>
+                <h4 class="text-lg font-bold text-emerald-700 mt-6">🔍 Expiry Tracking (90/120/180 day windows)</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
+                    <li>Scans all 36k+ SKUs daily, flagging products that expire in <strong>90, 120, or 180 days</strong> (colour‑coded).</li>
+                    <li>Calculates the <strong>total value of expiring stock</strong> – typically between <strong>₦1.2M and ₦2M monthly</strong>.</li>
+                    <li>Daily email at <strong>10am Nigeria time</strong> lists nearest‑expiry items first, with quantities, batch numbers, and monetary value at risk.</li>
+                    <li>Advises inter‑branch transfer for expiring stock that could sell faster elsewhere, or discount/return if unsellable.</li>
+                </ul>
+                <h4 class="text-lg font-bold text-emerald-700 mt-6">📊 Stock Limit Monitoring (Surplus & Low Stock)</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
+                    <li><strong>Configurable min/max thresholds</strong> per SKU (e.g., min = 100 units, max = 500 units).</li>
+                    <li><strong>Low stock alert:</strong> When current stock ≤ min threshold, the system advises procurement to reorder (suggested quantity = max − current).</li>
+                    <li><strong>Surplus alert:</strong> When current stock ≥ max threshold, the system flags surplus and recommends transferring excess to other branches (with lower stock) or running a promotion.</li>
+                    <li><strong>Cross‑branch rebalancing suggestions:</strong> If Branch A has surplus and Branch B has low stock of the same SKU, the email recommends a specific transfer quantity.</li>
+                    <li>All alerts appear in the <strong>same daily 10am email</strong> – stakeholders see expiry, surplus, and low stock in one place.</li>
+                </ul>
+                <h4 class="text-lg font-bold text-emerald-700 mt-6">⚙️ Production Hardening on Free Infrastructure</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify">
+                    <li>All expiry and stock limit logic runs inside PostgreSQL (views, functions, pg_cron) – Streamlit is only for on‑demand dashboard views.</li>
+                    <li>pg_cron triggers daily at 10am WAT: runs expiry scan, compares stock vs min/max thresholds, generates transfer/procurement advice, and sends emails via pg_net / edge functions.</li>
+                    <li>Chunked CSV uploads and paginated tables handle 36k+ rows without memory crashes on Streamlit Cloud’s free tier.</li>
+                    <li>Atomic RPC functions ensure data integrity across concurrent branch uploads.</li>
+                </ul>
+                <h4 class="text-lg font-bold text-orange-700 mt-6">📈 Outcome</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
+                    <li>The system accurately identifies expiring products worth <strong>₦1.2M–₦2M monthly</strong>, giving stakeholders clear visibility into at‑risk value.</li>
+                    <li>Procurement receives daily low stock alerts – they decide when and how much to reorder.</li>
+                    <li>Branch managers get surplus and expiry‑based transfer suggestions – they execute inter‑branch moves as needed.</li>
+                    <li>All on <strong>$0 monthly infrastructure cost</strong> – a true example of budget‑cutting production engineering.</li>
+                </ul>
+                <div class="text-sm mt-4 text-gray-500">
+                    <span class="font-bold">Skills & Tools used:</span>
+                    Python (Streamlit), Supabase (PostgreSQL, pg_cron, Edge Functions/pg_net), Pandas, Email automation.
+                </div>
+                <p class="text-center mt-4 text-gray-500 italic">
+                    (Screenshots available upon request – confidential client data)
+                </p>
+                <p class="text-center mt-2 text-gray-500 italic">
+                    <strong>Human‑in‑the‑loop:</strong> The system advises; stakeholders (procurement, branch managers) decide and implement.
+                </p>
+            </details>
+        </div>
+        <div class="p-6 md:p-8 lg:p-10">
+            <div class="flex flex-col space-y-6">
+                <div>
+                    <img alt="System architecture: CSV upload → Streamlit → Supabase (pg_cron daily expiry + stock limit scan) → email report with expiry value, surplus, low stock, transfer advice" class="portfolio-img" loading="lazy" src="images/inventory-arch-placeholder.webp"/>
+                    <p class="text-center text-sm text-gray-600"><strong>Zero‑cost architecture:</strong> expiry (90/120/180 days) + stock min/max monitoring → daily 10am email with actionable advice.</p>
+                </div>
+                <div>
+                    <img alt="Sample daily email report showing expiring products with monetary value (₦1.2M–₦2M range), low stock alerts, surplus flags, and inter‑branch transfer recommendations" class="portfolio-img" loading="lazy" src="images/inventory-dashboard-placeholder.webp"/>
+                    <p class="text-center text-sm text-gray-600"><strong>Daily 10am stakeholder report:</strong> expiry risk value, stock limits, and transfer/procurement advice – implementation left to the team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    
 <div class="max-w-4xl mx-auto text-justify space-y-12">
     <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="prose max-w-none p-6 md:p-8 lg:p-10">
