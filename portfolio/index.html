@@ -422,32 +422,118 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </ul>
         </nav>
     </header>
-    <main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
-       <section class="text-center py-16 px-4 sm:px-6 lg:px-8" id="hero" style="background-color: #f8f8f8;">
-    <img alt="KD Logo" class="scroll-fade-up" src="images/hero_logo.webp" style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;"/>
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 scroll-fade-up" style="font-size: 2.5rem;">
-        Business Automation & Systems Engineer
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-700 mb-4 text-justify scroll-fade-up">
-        I don’t just use tools. I build the systems behind them — AI pipelines, inventory intelligence, workflow automation, and operational layers that run on lean infrastructure.
-    </p>
-    <p class="text-gray-700 mb-6 text-justify scroll-fade-up">
-        ✅ Grew MuzoScents from ₦0 → ₦900k (42% margin) – zero paid ads<br>
-        ✅ Engineered inventory intelligence that pinpoints ₦2M+/month expiry risk across 36,000+ SKUs<br>
-        ✅ Deployed 4 live AI systems (RAG concierge, anomaly detection, ERP, growth advisor)<br>
-        ✅ Built temporary e‑commerce backend (webhooks + Supabase) ahead of platform launch
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up explore-delay" href="#portfolio">
-            See Automation Case Studies
-        </a>
-        <div class="scroll-fade-up" style="transition-delay: 1.2s;">
-            <a href="mailto:mickevsono@gmail.com" aria-label="Email Kevs to start a project" class="hero-cta-animate inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full">
-                Start a Project
+
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
+
+    <!-- HERO -->
+    <section class="text-center py-16 px-4 sm:px-6 lg:px-8" id="hero" style="background-color: #f8f8f8;">
+        <img alt="KD Logo" class="scroll-fade-up" src="images/hero_logo.webp" style="max-width: 300px; height: auto; margin: 0 auto 20px auto; display: block;"/>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 scroll-fade-up" style="font-size: 2.5rem;">
+            Business Systems & Operational Intelligence Analyst
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 text-justify scroll-fade-up">
+            I don’t just analyze data or use tools. I design, build, and deploy production-grade operational systems that deliver measurable business impact.
+        </p>
+        
+        <p class="text-gray-700 mb-4 text-justify scroll-fade-up"> 
+            I don't stack tools. I stack live production systems that drive real results.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
+            <a class="bg-orange-700 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 scroll-fade-up explore-delay" href="#live-systems">
+                View Live Systems
             </a>
+            <div class="scroll-fade-up" style="transition-delay: 1.2s;">
+                <a href="mailto:mickevsono@gmail.com" aria-label="Email Kevs to start a project" 
+                   class="hero-cta-animate inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full">
+                    Start a Project
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- LIVE PRODUCTION SYSTEMS -->
+    <section class="py-16" id="live-systems">
+        <h2 class="section-title text-center mb-12">Live Production Systems</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="font-bold text-2xl mb-3">Penafort Inventory Monitor</h3>
+                    <p class="text-emerald-700 font-semibold mb-5">36,000+ SKUs • Live</p>
+                    <p class="text-gray-700 leading-relaxed">Real-time inventory intelligence with FEFO risk scoring, anomaly detection via pg_cron, and multi-branch optimization. Prevents major expiry losses and optimizes working capital.</p>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-sm text-gray-500 border-t">Python • Streamlit • Supabase • PostgreSQL • pg_cron</div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="font-bold text-2xl mb-3">LASU Market Penetration Intelligence Platform</h3>
+                    <p class="text-emerald-700 font-semibold mb-5">₦1.7M Campaign • Live</p>
+                    <p class="text-gray-700 leading-relaxed">Real-time market entry system with conversion tracking, department analytics, CPA/CAC monitoring, CLV modeling, and loyalty infrastructure.</p>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-sm text-gray-500 border-t">Hybrid AI (Llama + Gemini) • Deterministic Governance</div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="font-bold text-2xl mb-3">MZIMS — MuzoScents Custom ERP</h3>
+                    <p class="text-emerald-700 font-semibold mb-5">₦900k Revenue (Zero Ad Spend)</p>
+                    <p class="text-gray-700 leading-relaxed">Autonomous inventory, order management, and operational intelligence system that scaled business profitability.</p>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-sm text-gray-500 border-t">Python • Streamlit • Supabase</div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="font-bold text-2xl mb-3">Kevs Digital Business Concierge & Growth Advisor</h3>
+                    <p class="text-gray-700 leading-relaxed">RAG-powered AI systems with strategic frameworks and strict deterministic governance for reliable business decision support.</p>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-sm text-gray-500 border-t">FastAPI • Groq/Gemini • RAG • WhatsApp Integration</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="py-12" id="about">
+        <h2 class="section-title text-center mb-10">About Me</h2>
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg leading-relaxed">
+            <p class="text-gray-700 mb-5">
+                My foundation in computer science shapes how I approach business problems. I build reliable, production-grade systems that bridge strategy and execution.
+            </p>
+            <p class="text-gray-700 mb-5">
+                From managing 36,000+ SKU inventory platforms to designing live market intelligence systems with hybrid AI, I focus on creating low-maintenance solutions that deliver measurable results with full auditability and governance.
+            </p>
+            <p class="text-gray-700">
+                I am passionate about turning complex operational challenges into intelligent, scalable systems that businesses can trust.
+            </p>
+        </div>
+    </section>
+
+    <!-- ENGINEERING PHILOSOPHY -->
+    <section class="py-12 bg-gray-50 rounded-3xl">
+        <h2 class="section-title text-center mb-10">Engineering Philosophy</h2>
+        <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow">
+            <p class="text-gray-700 leading-relaxed text-lg">
+                I build <strong>deterministic, auditable systems</strong> that combine the intelligence of AI with strict business logic and governance. 
+            </p>
+            <p class="text-gray-700 mt-6">
+                AI is a powerful tool — but it must be controlled. I design hybrid systems where every AI output is validated against clear rules, ensuring reliability, explainability, and real business value. 
+            </p>
+            <p class="text-gray-700 mt-6 italic">
+                Technology should serve strategy, not the other way around.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+
+    
 <section class="py-12" id="automation-skills">
     <h2 class="section-title">⚙️ Automation & Systems Engineering</h2>
     <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-lg">
