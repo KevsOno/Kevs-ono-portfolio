@@ -965,7 +965,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 </div>
     
-    
+
+
+
+
+    <div class="max-w-4xl mx-auto text-justify space-y-12">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="prose max-w-none p-6 md:p-8 lg:p-10">
+            <details class="collapsible-container">
+                <summary class="collapsible-summary">
+                    <h3 class="text-xl font-bold mb-6 text-orange-700">Case Study: Kevs Digital Business Concierge – Cross‑Device Conversational AI for Retail & E‑commerce</h3>
+                </summary>
+                <p class="leading-relaxed">
+                    <strong>The Problem:</strong> Retailers (physical stores + e‑commerce) receive customer queries across WhatsApp and their website – but support is fragmented. Customers expect to ask about inventory, loyalty, order status, and business info (location, opening times, offers). Without a unified system, support is manual, context is lost across devices, and customers get frustrated.
+                </p>
+                <p class="leading-relaxed">
+                    <strong>The Solution – Modular, RAG‑powered Concierge with Cross‑Device Identity:</strong> I built a production‑grade conversational AI system using a modular architecture (FastAPI backend, Supabase pgvector for memory, Gemini embeddings, Groq Llama 3.3, WhatsApp Cloud API). All on free tiers. <strong>The system is live, working, and available for any organisation to adopt (productised commodity).</strong>
+                </p>
+                <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
+                    <li><strong>Unified retail support</strong> – Real‑time access to inventory, loyalty points, order history, and <strong>business knowledge</strong> (location, opening hours, offers, policies).</li>
+                    <li><strong>General business knowledge</strong> – Static business info stored in Supabase. AI answers “What time do you close?” or “Do you have a discount code?” from this knowledge base.</li>
+                    <li><strong>Cross‑device user tracking</strong> – WhatsApp uses <strong>phone number</strong>; web chat uses <strong>email authentication</strong>. Both link to the same customer profile – AI remembers conversations and preferences across channels.</li>
+                    <li><strong>WhatsApp Gateway</strong> – Webhooks receive messages; AI responds with access to all modules.</li>
+                    <li><strong>Web Chat Widget</strong> – Embedded HTML/CSS/JS widget (in Hugging Face demo) authenticates via email, then queries the same FastAPI backend.</li>
+                    <li><strong>RAG (Retrieval‑Augmented Generation)</strong> – Gemini embeds queries; Supabase <code>pgvector</code> retrieves relevant memories (past conversations, inventory, loyalty, business info). Llama 3.3 answers grounded in those memories + live data.</li>
+                    <li><strong>Loyalty Module</strong> – Tracks points, redemption, referrals. AI answers “How many points do I have?” across devices.</li>
+                    <li><strong>Inventory Module</strong> – Real‑time lookups to inventory tables. AI answers “Do you have X in stock?” and suggests alternatives.</li>
+                    <li><strong>Human hand‑off (escalation)</strong> – When the AI cannot answer a question (low confidence, out‑of‑scope, or sensitive issue), the conversation is seamlessly escalated to a human customer service agent via WhatsApp or an internal dashboard.</li>
+                    <li><strong>Demo Mode</strong> – Hugging Face Space includes a chat widget simulating both channels – perfect for portfolio review and client testing.</li>
+                </ul>
+                <h4 class="text-lg font-bold text-emerald-700 mt-6">⚙️ Production on Zero Budget</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify">
+                    <li>Hugging Face Spaces – free tier hosts FastAPI backend (Docker).</li>
+                    <li>Supabase – free tier (PostgreSQL, pgvector, auth, real‑time).</li>
+                    <li>Groq (Llama 3.3) – free API tier.</li>
+                    <li>Gemini – free tier for embeddings.</li>
+                    <li>WhatsApp Cloud API – free for testing (demo mode avoids live calls).</li>
+                </ul>
+                <h4 class="text-lg font-bold text-blue-700 mt-6">🧩 Why it's complex (modular design + cross‑device identity + multi‑domain knowledge + human hand‑off)</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify">
+                    <li>Each module (WhatsApp, web widget, RAG, loyalty, inventory, business info, escalation) runs independently but shares the same vector DB, LLM orchestrator, and <strong>customer identity table</strong> (phone ↔ email mapping).</li>
+                    <li>Business info is stored as structured data (hours, location, offers) and also embedded for semantic retrieval.</li>
+                    <li>Human hand‑off logic is integrated: confidence scoring triggers real‑time notifications to agents, and the conversation context is preserved.</li>
+                    <li>Designed to be extended (add email channel, POS) without rewriting core logic.</li>
+                    <li>All secrets via environment variables – safe for open‑source portfolio (MIT license).</li>
+                </ul>
+                <h4 class="text-lg font-bold text-orange-700 mt-6">📌 Current Status</h4>
+                <ul class="list-disc pl-5 space-y-1 text-justify leading-relaxed">
+                    <li>Live demo on Hugging Face Spaces.</li>
+                    <li>Code available on GitHub (MIT license).</li>
+                    <li>Ready for adoption by any retail or e‑commerce organisation – no metrics claimed as it's a productised commodity.</li>
+                </ul>
+                <div class="text-sm mt-4 text-gray-500">
+                    <span class="font-bold">Skills & Tools used:</span>
+                    FastAPI, Supabase (pgvector, RPC, auth), Gemini (embeddings), Groq (Llama 3.3), WhatsApp Cloud API, Docker, Hugging Face Spaces, Python, RAG architecture, cross‑device authentication, business knowledge management, human‑in‑the‑loop escalation.
+                </div>
+                <p class="text-center mt-4">
+                    <a href="https://huggingface.co/spaces/kevsono/kevsdigital-concierge" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline inline-flex items-center gap-1">
+                        🔗 Live Demo on Hugging Face
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 3H21m0 0v7.5M21 3l-9 9M7.5 7.5H3v13.5h13.5v-4.5" />
+                        </svg>
+                    </a>
+                </p>
+                <p class="text-center mt-2 text-gray-500 italic">
+                    (Code available on GitHub – MIT license)
+                </p>
+            </details>
+        </div>
+        <div class="p-6 md:p-8 lg:p-10">
+            <div class="flex flex-col space-y-6">
+                <div>
+                    <img alt="Modular architecture with cross‑device identity, business knowledge, and human hand‑off" class="portfolio-img" loading="lazy" src="images/concierge-architecture-placeholder.webp"/>
+                    <p class="text-center text-sm text-gray-600"><strong>Modular RAG pipeline:</strong> phone (WhatsApp) and email (web) link to same profile; AI accesses inventory, loyalty, business knowledge, and escalates to human agents when needed.</p>
+                </div>
+                <div>
+                    <img alt="Screenshot of Hugging Face demo widget showing answers to business info queries and hand‑off simulation" class="portfolio-img" loading="lazy" src="images/concierge-demo-placeholder.webp"/>
+                    <p class="text-center text-sm text-gray-600"><strong>Live demo:</strong> test cross‑device AI with business info, inventory, loyalty queries, and human hand‑off.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     
 
     
