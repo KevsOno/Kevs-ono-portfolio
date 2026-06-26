@@ -190,6 +190,7 @@
             margin-bottom: 1rem;
         }
 
+        /* ----- REVERTED: form button back to original blue ----- */
         form input,
         form button {
             width: 100%;
@@ -200,14 +201,14 @@
             border-radius: 5px;
         }
         form button {
-            background-color: #1a1a2e;
+            background-color: #3498db;
             color: white;
             border: none;
             cursor: pointer;
             font-weight: 600;
         }
         form button:hover {
-            background-color: #2d2d4e;
+            background-color: #2980b9;
         }
 
         .success {
@@ -219,11 +220,12 @@
             font-size: 0.9rem;
         }
 
+        /* ----- REVERTED: back-to-top back to original blue ----- */
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #1a1a2e;
+            background-color: #3498db;
             color: white;
             padding: 10px 15px;
             border-radius: 50%;
@@ -231,9 +233,13 @@
             cursor: pointer;
             display: none;
             z-index: 1000;
+            border: none;
         }
         .back-to-top.visible {
             display: block;
+        }
+        .back-to-top:hover {
+            background-color: #2980b9;
         }
 
         .mobile-menu {
@@ -730,7 +736,7 @@
         </p>
     </section>
 
-    <!-- ===== SYSTEM ARCHITECTURE (rebuild – error‑free) ===== -->
+    <!-- ===== SYSTEM ARCHITECTURE (rebuilt – error‑free) ===== -->
     <section class="py-8" id="architecture">
         <h2 class="section-title text-center mb-10">System Architecture</h2>
         <div class="arch-container">
@@ -1292,7 +1298,7 @@
     <p>© 2025 Oghenekevbe Michael Onoriode. All rights reserved.</p>
 </footer>
 
-<!-- ===== POPUP ===== -->
+<!-- ===== POPUP (scroll-triggered) ===== -->
 <div aria-labelledby="popup-title" class="popup" id="popup" role="dialog">
     <div class="popup-header">
         <span class="popup-title" id="popup-title">Let's Work Together</span>
@@ -1308,7 +1314,7 @@
     </form>
 </div>
 
-<!-- ===== BACK TO TOP ===== -->
+<!-- ===== BACK TO TOP (reverted color) ===== -->
 <button aria-label="Back to top" class="back-to-top" id="back-to-top" tabindex="0">↑ Top</button>
 
 <!-- ===== CHAT WIDGET ===== -->
@@ -1376,7 +1382,10 @@
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         if (scrollTop > 300) backToTop?.classList.add('visible');
         else backToTop?.classList.remove('visible');
-        if (scrollTop / (document.documentElement.scrollHeight - window.innerHeight) > 0.5) showPopup();
+        // Show popup at 50% scroll depth
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollDepth = scrollTop / docHeight;
+        if (scrollDepth > 0.5) showPopup();
     });
     backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
